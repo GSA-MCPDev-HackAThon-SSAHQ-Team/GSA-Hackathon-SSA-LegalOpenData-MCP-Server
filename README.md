@@ -1,0 +1,1 @@
+# GSA-Hackathon-SSA-LegalOpenData-MCP-Server
