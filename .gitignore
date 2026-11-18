@@ -218,9 +218,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# SSA ALJ crawl output (raw XML + manifest). The built SQLite is tracked so
-# Docker/Render can COPY data/ssa_alj.sqlite without a separate download step.
-/data/raw/
+# Crawl manifest only (raw XML + SQLite are tracked for rebuild/deploy).
 /data/manifest.json
 eval/deterministic/last_run.json
 .DS_Store

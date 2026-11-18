@@ -1,0 +1,2436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data created="03/07/2025" records="162">
+<title>National Ranking Report By ALJ Dispositions Per Day Per ALJ</title>
+	<RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+            <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>3.00</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PONCE</HEARING_OFFICE>
+                        
+                            <RANK>1</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>2.31</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ALBUQUERQUE</HEARING_OFFICE>
+                        
+                            <RANK>2</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>2.25</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LAWRENCE MA</HEARING_OFFICE>
+                        
+                            <RANK>3</RANK>
+                        
+                            <REGION>01</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>2.03</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>RICHMOND</HEARING_OFFICE>
+                        
+                            <RANK>4</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.99</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SALT LAKE CITY</HEARING_OFFICE>
+                        
+                            <RANK>5</RANK>
+                        
+                            <REGION>08</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.99</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>HONOLULU</HEARING_OFFICE>
+                        
+                            <RANK>5</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.98</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ROCHESTER</HEARING_OFFICE>
+                        
+                            <RANK>7</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.98</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>DAYTON</HEARING_OFFICE>
+                        
+                            <RANK>7</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.97</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>COLUMBUS</HEARING_OFFICE>
+                        
+                            <RANK>9</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.91</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>JOHNSTOWN</HEARING_OFFICE>
+                        
+                            <RANK>10</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.89</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LITTLE ROCK</HEARING_OFFICE>
+                        
+                            <RANK>11</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.88</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LAS VEGAS</HEARING_OFFICE>
+                        
+                            <RANK>12</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.86</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>RIO GRANDE VALLEY TX</HEARING_OFFICE>
+                        
+                            <RANK>13</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.85</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>COLUMBIA MO</HEARING_OFFICE>
+                        
+                            <RANK>14</RANK>
+                        
+                            <REGION>07</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.85</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>GRAND RAPIDS</HEARING_OFFICE>
+                        
+                            <RANK>14</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.82</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PHILADELPHIA EAST</HEARING_OFFICE>
+                        
+                            <RANK>16</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.82</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>DALLAS NORTH OHO</HEARING_OFFICE>
+                        
+                            <RANK>16</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.81</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>HOUSTON NORTH</HEARING_OFFICE>
+                        
+                            <RANK>18</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.81</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MILWAUKEE</HEARING_OFFICE>
+                        
+                            <RANK>18</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.81</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>WICHITA</HEARING_OFFICE>
+                        
+                            <RANK>18</RANK>
+                        
+                            <REGION>07</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.81</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>HARRISBURG</HEARING_OFFICE>
+                        
+                            <RANK>18</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.80</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>AKRON OH</HEARING_OFFICE>
+                        
+                            <RANK>22</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.80</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>INDIANAPOLIS</HEARING_OFFICE>
+                        
+                            <RANK>22</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.79</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>VALPARAISO IN</HEARING_OFFICE>
+                        
+                            <RANK>24</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.77</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FARGO</HEARING_OFFICE>
+                        
+                            <RANK>25</RANK>
+                        
+                            <REGION>08</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.76</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PORTLAND OR</HEARING_OFFICE>
+                        
+                            <RANK>26</RANK>
+                        
+                            <REGION>10</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.76</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FAYETTEVILLE NC</HEARING_OFFICE>
+                        
+                            <RANK>26</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.76</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SAN RAFAEL</HEARING_OFFICE>
+                        
+                            <RANK>26</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.76</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SACRAMENTO</HEARING_OFFICE>
+                        
+                            <RANK>26</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.75</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FLINT</HEARING_OFFICE>
+                        
+                            <RANK>30</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.75</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>OAK BROOK</HEARING_OFFICE>
+                        
+                            <RANK>30</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.74</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ELKINS PARK</HEARING_OFFICE>
+                        
+                            <RANK>32</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.73</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PHILADELPHIA</HEARING_OFFICE>
+                        
+                            <RANK>33</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.73</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MINNEAPOLIS</HEARING_OFFICE>
+                        
+                            <RANK>33</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.72</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SEVEN FIELDS</HEARING_OFFICE>
+                        
+                            <RANK>35</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.71</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>HUNTINGTON WV</HEARING_OFFICE>
+                        
+                            <RANK>36</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.71</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>CLEVELAND</HEARING_OFFICE>
+                        
+                            <RANK>36</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.71</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LANSING</HEARING_OFFICE>
+                        
+                            <RANK>36</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.70</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>EUGENE</HEARING_OFFICE>
+                        
+                            <RANK>39</RANK>
+                        
+                            <REGION>10</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.70</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>WILKES BARRE</HEARING_OFFICE>
+                        
+                            <RANK>39</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.70</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FRESNO</HEARING_OFFICE>
+                        
+                            <RANK>39</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.69</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SYRACUSE</HEARING_OFFICE>
+                        
+                            <RANK>42</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.69</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SOUTH JERSEY</HEARING_OFFICE>
+                        
+                            <RANK>42</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.69</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>TACOMA</HEARING_OFFICE>
+                        
+                            <RANK>42</RANK>
+                        
+                            <REGION>10</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.69</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LONG BEACH</HEARING_OFFICE>
+                        
+                            <RANK>42</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.69</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PHOENIX DOWNTOWN</HEARING_OFFICE>
+                        
+                            <RANK>42</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.68</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PORTLAND ME</HEARING_OFFICE>
+                        
+                            <RANK>47</RANK>
+                        
+                            <REGION>01</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.68</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>CINCINNATI</HEARING_OFFICE>
+                        
+                            <RANK>47</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.67</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>TUCSON</HEARING_OFFICE>
+                        
+                            <RANK>49</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.66</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>CHARLESTON WV</HEARING_OFFICE>
+                        
+                            <RANK>50</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.66</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>DENVER</HEARING_OFFICE>
+                        
+                            <RANK>50</RANK>
+                        
+                            <REGION>08</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.65</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MORGANTOWN</HEARING_OFFICE>
+                        
+                            <RANK>52</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.65</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MT PLEASANT MI</HEARING_OFFICE>
+                        
+                            <RANK>52</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.64</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>BALTIMORE</HEARING_OFFICE>
+                        
+                            <RANK>54</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.64</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SPOKANE</HEARING_OFFICE>
+                        
+                            <RANK>54</RANK>
+                        
+                            <REGION>10</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.63</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>EVANSVILLE</HEARING_OFFICE>
+                        
+                            <RANK>56</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.63</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MIDDLESBORO</HEARING_OFFICE>
+                        
+                            <RANK>56</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.62</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FORT WAYNE</HEARING_OFFICE>
+                        
+                            <RANK>58</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.62</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FORT SMITH</HEARING_OFFICE>
+                        
+                            <RANK>58</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.62</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>NEW ORLEANS</HEARING_OFFICE>
+                        
+                            <RANK>58</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.60</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PITTSBURGH</HEARING_OFFICE>
+                        
+                            <RANK>61</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.60</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FORT MYERS FL</HEARING_OFFICE>
+                        
+                            <RANK>61</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.58</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>CHARLOTTESVILLE</HEARING_OFFICE>
+                        
+                            <RANK>63</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.57</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>DES MOINES</HEARING_OFFICE>
+                        
+                            <RANK>64</RANK>
+                        
+                            <REGION>07</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.56</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>RENO</HEARING_OFFICE>
+                        
+                            <RANK>65</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.56</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>BILLINGS</HEARING_OFFICE>
+                        
+                            <RANK>65</RANK>
+                        
+                            <REGION>08</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.55</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SPRINGFIELD MO</HEARING_OFFICE>
+                        
+                            <RANK>67</RANK>
+                        
+                            <REGION>07</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.55</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MANCHESTER</HEARING_OFFICE>
+                        
+                            <RANK>67</RANK>
+                        
+                            <REGION>01</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.55</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ALEXANDRIA</HEARING_OFFICE>
+                        
+                            <RANK>67</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.54</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>EVANSTON</HEARING_OFFICE>
+                        
+                            <RANK>70</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.53</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MORENO VALLEY</HEARING_OFFICE>
+                        
+                            <RANK>71</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.52</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>BUFFALO</HEARING_OFFICE>
+                        
+                            <RANK>72</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.52</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>OKLAHOMA CITY</HEARING_OFFICE>
+                        
+                            <RANK>72</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.51</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>NASHVILLE</HEARING_OFFICE>
+                        
+                            <RANK>74</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.51</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SAN DIEGO</HEARING_OFFICE>
+                        
+                            <RANK>74</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.51</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PEORIA</HEARING_OFFICE>
+                        
+                            <RANK>74</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.50</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MADISON</HEARING_OFFICE>
+                        
+                            <RANK>77</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.50</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FORT WORTH</HEARING_OFFICE>
+                        
+                            <RANK>77</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.50</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PROVIDENCE</HEARING_OFFICE>
+                        
+                            <RANK>77</RANK>
+                        
+                            <REGION>01</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.50</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>HOUSTON WEST</HEARING_OFFICE>
+                        
+                            <RANK>77</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.50</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SEATTLE</HEARING_OFFICE>
+                        
+                            <RANK>77</RANK>
+                        
+                            <REGION>10</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.49</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SHREVEPORT</HEARING_OFFICE>
+                        
+                            <RANK>82</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.49</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LIVONIA MI</HEARING_OFFICE>
+                        
+                            <RANK>82</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.48</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>TOLEDO OH</HEARING_OFFICE>
+                        
+                            <RANK>84</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.48</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SPECIAL REVIEW CADRE</HEARING_OFFICE>
+                        
+                            <RANK>84</RANK>
+                        
+                            <REGION>12</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.48</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>OMAHA</HEARING_OFFICE>
+                        
+                            <RANK>84</RANK>
+                        
+                            <REGION>07</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.48</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ROANOKE</HEARING_OFFICE>
+                        
+                            <RANK>84</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.48</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PASADENA</HEARING_OFFICE>
+                        
+                            <RANK>84</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.48</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MCALESTER</HEARING_OFFICE>
+                        
+                            <RANK>84</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.48</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ORLAND PARK</HEARING_OFFICE>
+                        
+                            <RANK>84</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.47</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>HARTFORD</HEARING_OFFICE>
+                        
+                            <RANK>91</RANK>
+                        
+                            <REGION>01</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.47</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>NEW YORK VARICK</HEARING_OFFICE>
+                        
+                            <RANK>91</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.47</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ST PETERSBURG FL OHO</HEARING_OFFICE>
+                        
+                            <RANK>91</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.46</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>DOVER</HEARING_OFFICE>
+                        
+                            <RANK>94</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.46</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>CHICAGO</HEARING_OFFICE>
+                        
+                            <RANK>94</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.45</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>TULSA OHO</HEARING_OFFICE>
+                        
+                            <RANK>96</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.45</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>OAKLAND</HEARING_OFFICE>
+                        
+                            <RANK>96</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.44</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LOUISVILLE</HEARING_OFFICE>
+                        
+                            <RANK>98</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.44</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SAN BERNARDINO</HEARING_OFFICE>
+                        
+                            <RANK>98</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.44</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SANTA BARBARA</HEARING_OFFICE>
+                        
+                            <RANK>98</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.43</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>NORWALK</HEARING_OFFICE>
+                        
+                            <RANK>101</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.42</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>DETROIT</HEARING_OFFICE>
+                        
+                            <RANK>102</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.42</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SPRINGFIELD MA</HEARING_OFFICE>
+                        
+                            <RANK>102</RANK>
+                        
+                            <REGION>01</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.42</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LEXINGTON</HEARING_OFFICE>
+                        
+                            <RANK>102</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.41</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>NORFOLK</HEARING_OFFICE>
+                        
+                            <RANK>105</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.41</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>WHITE PLAINS</HEARING_OFFICE>
+                        
+                            <RANK>105</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.41</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>JERSEY CITY</HEARING_OFFICE>
+                        
+                            <RANK>105</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.41</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PADUCAH</HEARING_OFFICE>
+                        
+                            <RANK>105</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.39</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MEMPHIS</HEARING_OFFICE>
+                        
+                            <RANK>109</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.39</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>KANSAS CITY</HEARING_OFFICE>
+                        
+                            <RANK>109</RANK>
+                        
+                            <REGION>07</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.38</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LONG ISLAND</HEARING_OFFICE>
+                        
+                            <RANK>111</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.38</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>TUPELO</HEARING_OFFICE>
+                        
+                            <RANK>111</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.37</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>OAK PARK</HEARING_OFFICE>
+                        
+                            <RANK>113</RANK>
+                        
+                            <REGION>05</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.36</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>COLORADO SPRINGS</HEARING_OFFICE>
+                        
+                            <RANK>114</RANK>
+                        
+                            <REGION>08</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.36</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>NEWARK</HEARING_OFFICE>
+                        
+                            <RANK>114</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.36</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LOS ANGELES WEST</HEARING_OFFICE>
+                        
+                            <RANK>114</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.35</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>CHARLOTTE</HEARING_OFFICE>
+                        
+                            <RANK>117</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.35</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SAVANNAH</HEARING_OFFICE>
+                        
+                            <RANK>117</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.33</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>JACKSON MS OHO</HEARING_OFFICE>
+                        
+                            <RANK>119</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.33</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ORANGE</HEARING_OFFICE>
+                        
+                            <RANK>119</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.33</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ST LOUIS</HEARING_OFFICE>
+                        
+                            <RANK>119</RANK>
+                        
+                            <REGION>07</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.32</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>CHARLESTON SC</HEARING_OFFICE>
+                        
+                            <RANK>122</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.31</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>BOSTON</HEARING_OFFICE>
+                        
+                            <RANK>123</RANK>
+                        
+                            <REGION>01</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.31</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ALBANY</HEARING_OFFICE>
+                        
+                            <RANK>123</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.30</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SAN ANTONIO</HEARING_OFFICE>
+                        
+                            <RANK>125</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.30</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>RALEIGH</HEARING_OFFICE>
+                        
+                            <RANK>125</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.28</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SAN JOSE</HEARING_OFFICE>
+                        
+                            <RANK>127</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.28</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>DALLAS DOWNTOWN</HEARING_OFFICE>
+                        
+                            <RANK>127</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.27</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>QUEENS</HEARING_OFFICE>
+                        
+                            <RANK>129</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.26</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FRANKLIN TN</HEARING_OFFICE>
+                        
+                            <RANK>130</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.25</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>WASHINGTON</HEARING_OFFICE>
+                        
+                            <RANK>131</RANK>
+                        
+                            <REGION>03</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.25</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>NEW HAVEN</HEARING_OFFICE>
+                        
+                            <RANK>131</RANK>
+                        
+                            <REGION>01</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.23</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>GREENVILLE</HEARING_OFFICE>
+                        
+                            <RANK>133</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.22</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>STOCKTON</HEARING_OFFICE>
+                        
+                            <RANK>134</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.21</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>COLUMBIA SC</HEARING_OFFICE>
+                        
+                            <RANK>135</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.21</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>NEW YORK</HEARING_OFFICE>
+                        
+                            <RANK>135</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.21</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SAN JUAN</HEARING_OFFICE>
+                        
+                            <RANK>135</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.19</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>KINGSPORT</HEARING_OFFICE>
+                        
+                            <RANK>138</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.19</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FT LAUDERDALE</HEARING_OFFICE>
+                        
+                            <RANK>138</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.18</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>LOS ANGELES DOWNTOWN</HEARING_OFFICE>
+                        
+                            <RANK>140</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.17</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MONTGOMERY</HEARING_OFFICE>
+                        
+                            <RANK>141</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.14</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>HATTIESBURG</HEARING_OFFICE>
+                        
+                            <RANK>142</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.13</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ORLANDO</HEARING_OFFICE>
+                        
+                            <RANK>143</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.13</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>TOPEKA KS</HEARING_OFFICE>
+                        
+                            <RANK>143</RANK>
+                        
+                            <REGION>07</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.12</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MOBILE</HEARING_OFFICE>
+                        
+                            <RANK>145</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.11</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>FLORENCE</HEARING_OFFICE>
+                        
+                            <RANK>146</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.11</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>GREENSBORO</HEARING_OFFICE>
+                        
+                            <RANK>146</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.11</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>TAMPA OHO</HEARING_OFFICE>
+                        
+                            <RANK>146</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.10</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>TALLAHASSEE FL OHO</HEARING_OFFICE>
+                        
+                            <RANK>149</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.08</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>PHOENIX NORTH</HEARING_OFFICE>
+                        
+                            <RANK>150</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.06</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>BIRMINGHAM</HEARING_OFFICE>
+                        
+                            <RANK>151</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.04</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>SAN FRANCISCO</HEARING_OFFICE>
+                        
+                            <RANK>152</RANK>
+                        
+                            <REGION>09</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.04</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MACON</HEARING_OFFICE>
+                        
+                            <RANK>152</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.02</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>COVINGTON GA</HEARING_OFFICE>
+                        
+                            <RANK>154</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.02</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>CHATTANOOGA</HEARING_OFFICE>
+                        
+                            <RANK>154</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.00</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>KNOXVILLE</HEARING_OFFICE>
+                        
+                            <RANK>156</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.00</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>JACKSONVILLE</HEARING_OFFICE>
+                        
+                            <RANK>156</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>1.00</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>BRONX</HEARING_OFFICE>
+                        
+                            <RANK>156</RANK>
+                        
+                            <REGION>02</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>0.98</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ATLANTA DOWNTOWN</HEARING_OFFICE>
+                        
+                            <RANK>159</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>0.93</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>ATLANTA NORTH</HEARING_OFFICE>
+                        
+                            <RANK>160</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>0.86</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>MIAMI OHO</HEARING_OFFICE>
+                        
+                            <RANK>161</RANK>
+                        
+                            <REGION>04</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                <row>           
+                    
+                            <ALJ_DISPS_PER_DAY_PER_ALJ>0.75</ALJ_DISPS_PER_DAY_PER_ALJ>
+                        
+                            <HEARING_OFFICE>METAIRIE</HEARING_OFFICE>
+                        
+                            <RANK>162</RANK>
+                        
+                            <REGION>06</REGION>
+                        
+                            <RPTG_PRD_ENDT>02/28/2025</RPTG_PRD_ENDT>
+                        
+                            <WORKDAYS>101</WORKDAYS>
+                        
+                 </row>
+                
+            </data>
