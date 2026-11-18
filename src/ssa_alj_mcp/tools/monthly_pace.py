@@ -10,7 +10,7 @@ from pydantic import Field
 
 from ssa_alj_mcp.models import FiscalYear, RegionCode, ResponseFormat
 from ssa_alj_mcp.services import trends
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, shaped
+from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, refusal_for, shaped
 
 
 def register(mcp: FastMCP) -> None:
@@ -35,5 +35,7 @@ def register(mcp: FastMCP) -> None:
         Answers whether dispositions are speeding up or slowing down inside one fiscal year —
         not a multi-year trend (see ssa_alj_national_trend).
         """
+        if refused := refusal_for(office):
+            return shaped(refused, response_format, title="Request refused")
         payload = await asyncio.to_thread(trends.monthly_pace, fiscal_year, office, region)
         return shaped(payload, response_format, title="Monthly pace")

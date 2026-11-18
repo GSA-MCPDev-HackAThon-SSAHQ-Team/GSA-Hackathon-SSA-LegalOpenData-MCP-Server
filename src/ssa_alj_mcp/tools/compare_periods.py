@@ -17,7 +17,13 @@ from ssa_alj_mcp.models import (
     ResponseFormat,
 )
 from ssa_alj_mcp.services import trends
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    refusal_for,
+    shaped,
+)
 
 
 def register(mcp: FastMCP) -> None:
@@ -76,6 +82,8 @@ def register(mcp: FastMCP) -> None:
         Both years are required. Omit name to list biggest movers; pass a specific name for
         one entity. For workforce joins/leaves see ssa_alj_judge_movements.
         """
+        if refused := refusal_for(name):
+            return shaped(refused, response_format, title="Request refused")
         # Smaller default page for mover leaderboards.
         limit, offset = page_args(pagination or PaginationParams(limit=15))
         payload = await asyncio.to_thread(

@@ -7,6 +7,7 @@ from typing import Annotated, Any
 from pydantic import Field
 
 from ssa_alj_mcp.formatting import ensure_notes, format_response
+from ssa_alj_mcp.guardrails import refusal
 from ssa_alj_mcp.models import PaginationParams, ResponseFormat
 
 READ_ONLY = {
@@ -25,6 +26,11 @@ ResponseFormatParam = Annotated[
         )
     ),
 ]
+
+
+def refusal_for(*values: str | None) -> dict[str, Any] | None:
+    """PII or security refusal for free-text arguments. None when the text is clear."""
+    return refusal(*values)
 
 
 def annotations(title: str) -> dict:

@@ -9,7 +9,7 @@ from fastmcp import FastMCP
 
 from ssa_alj_mcp.models import FiscalYear, JudgeNameQuery, ResponseFormat
 from ssa_alj_mcp.services import judges
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, shaped
+from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, refusal_for, shaped
 
 
 def register(mcp: FastMCP) -> None:
@@ -27,5 +27,7 @@ def register(mcp: FastMCP) -> None:
         Prefer ssa_alj_search_judges first if the name could be ambiguous. Published counts only —
         not a performance rating. Prompt: judge_summary.
         """
+        if refused := refusal_for(name):
+            return shaped(refused, response_format, title="Request refused")
         payload = await asyncio.to_thread(judges.get_judge_profile, name, fiscal_year)
         return shaped(payload, response_format, title=f"Judge profile: {name}")

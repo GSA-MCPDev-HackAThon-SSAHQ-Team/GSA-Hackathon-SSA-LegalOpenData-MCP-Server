@@ -9,7 +9,7 @@ from fastmcp import FastMCP
 
 from ssa_alj_mcp.models import FiscalYear, OfficeQuery, ResponseFormat
 from ssa_alj_mcp.services import offices
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, shaped
+from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, refusal_for, shaped
 
 
 def register(mcp: FastMCP) -> None:
@@ -27,5 +27,7 @@ def register(mcp: FastMCP) -> None:
         Pass fiscal_year to include that year's judges. For a cross-office ranking in one year,
         use ssa_alj_compare_offices.
         """
+        if refused := refusal_for(office):
+            return shaped(refused, response_format, title="Request refused")
         payload = await asyncio.to_thread(offices.get_office_profile, office, fiscal_year)
         return shaped(payload, response_format, title=f"Office profile: {office}")

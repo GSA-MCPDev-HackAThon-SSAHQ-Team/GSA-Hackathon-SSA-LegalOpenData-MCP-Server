@@ -10,7 +10,13 @@ from pydantic import Field
 
 from ssa_alj_mcp.models import FiscalYear, JudgeNameQuery, PaginationParams, ResponseFormat
 from ssa_alj_mcp.services import judges
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    refusal_for,
+    shaped,
+)
 
 
 def register(mcp: FastMCP) -> None:
@@ -39,6 +45,8 @@ def register(mcp: FastMCP) -> None:
         Use this to confirm spelling before ssa_alj_get_judge_profile when the name might match
         more than one person.
         """
+        if refused := refusal_for(name, office):
+            return shaped(refused, response_format, title="Request refused")
         limit, offset = page_args(pagination)
         payload = await asyncio.to_thread(
             judges.search_judges, name, office, fiscal_year, limit, offset

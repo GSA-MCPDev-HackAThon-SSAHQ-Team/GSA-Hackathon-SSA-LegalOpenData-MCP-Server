@@ -10,7 +10,13 @@ from pydantic import Field
 
 from ssa_alj_mcp.models import FiscalYear, PaginationParams, ResponseFormat
 from ssa_alj_mcp.services import workforce
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    refusal_for,
+    shaped,
+)
 
 
 def register(mcp: FastMCP) -> None:
@@ -42,6 +48,8 @@ def register(mcp: FastMCP) -> None:
         Both years required. This is about who appears where — not rate changes
         (ssa_alj_compare_periods) or a single judge's disposition history.
         """
+        if refused := refusal_for(office):
+            return shaped(refused, response_format, title="Request refused")
         limit, offset = page_args(pagination)
         payload = await asyncio.to_thread(
             workforce.judge_movements,

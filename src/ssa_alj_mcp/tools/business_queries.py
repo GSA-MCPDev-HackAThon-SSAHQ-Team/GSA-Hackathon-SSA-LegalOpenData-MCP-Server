@@ -10,7 +10,13 @@ from pydantic import Field
 
 from ssa_alj_mcp.models import PaginationParams, ResponseFormat
 from ssa_alj_mcp.services import discovery
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    refusal_for,
+    shaped,
+)
 
 
 def register(mcp: FastMCP) -> None:
@@ -48,6 +54,8 @@ def register(mcp: FastMCP) -> None:
         suggested tools and args — then call those tools (and ssa_alj_source_links) for numbers
         and verification URLs. This tool does not compute disposition statistics itself.
         """
+        if refused := refusal_for(query):
+            return shaped(refused, response_format, title="Request refused")
         limit, offset = page_args(pagination)
         payload = await asyncio.to_thread(
             discovery.business_queries, query, category, limit, offset

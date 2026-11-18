@@ -16,7 +16,13 @@ from ssa_alj_mcp.models import (
     VariationSortKey,
 )
 from ssa_alj_mcp.services import analysis
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    refusal_for,
+    shaped,
+)
 
 
 def register(mcp: FastMCP) -> None:
@@ -62,6 +68,8 @@ def register(mcp: FastMCP) -> None:
         Pass office for detail (e.g. Miami); omit office to rank offices by gap. Not the same as
         national peer outliers (ssa_alj_outlier_report).
         """
+        if refused := refusal_for(office):
+            return shaped(refused, response_format, title="Request refused")
         limit, offset = page_args(pagination or PaginationParams(limit=15))
         payload = await asyncio.to_thread(
             analysis.within_office_variation,

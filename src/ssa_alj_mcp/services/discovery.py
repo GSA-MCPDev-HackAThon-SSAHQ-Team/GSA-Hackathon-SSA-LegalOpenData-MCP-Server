@@ -6,6 +6,7 @@ import re
 from typing import Any
 
 from ssa_alj_mcp.db import query
+from ssa_alj_mcp.guardrails import scope_note
 from ssa_alj_mcp.services.common import CUMULATIVE_NOTE, RATE_NOTE, handled
 from ssa_alj_mcp.utils import error, paginate
 
@@ -184,38 +185,6 @@ _CATALOG: list[dict[str, Any]] = [
 ]
 
 
-_FORECAST_RE = re.compile(
-    r"\b(predict\w*|forecast\w*|projection\w*|project(ed|ing|s)?|next (year|fiscal)|"
-    r"future|will|going to)\b",
-    re.IGNORECASE,
-)
-_BEST_PERFORMER_RE = re.compile(
-    r"\b((best|top|worst)[ -](performers?|performing|judges?|performance)|"
-    r"judge (performance )?rank(ing|ings|s)?)\b",
-    re.IGNORECASE,
-)
-_SCOPE_NOTE_FORECAST = (
-    "This dataset has no forecasting model. Published counts are cumulative fiscal-year-to-date "
-    "figures, so they cannot predict a future year. Use the factual recipes below (trends, "
-    "outliers, or a judge profile) and describe what happened, not what will happen."
-)
-_SCOPE_NOTE_RANKING = (
-    "Published allowance and decision counts are not a performance rating for any ALJ or office, "
-    "and allowance rates are not case-mix adjusted. Do not name a 'best' or 'top' judge from "
-    "these tools. Use outlier_report or within_office_variation for factual comparisons."
-)
-
-
-def _scope_note(query_text: str) -> str | None:
-    """Return a guardrail note when a custom query asks for a forecast or a performance ranking."""
-    notes: list[str] = []
-    if _FORECAST_RE.search(query_text):
-        notes.append(_SCOPE_NOTE_FORECAST)
-    if _BEST_PERFORMER_RE.search(query_text):
-        notes.append(_SCOPE_NOTE_RANKING)
-    return " ".join(notes) or None
-
-
 def _tokens(text: str) -> set[str]:
     return {t for t in re.findall(r"[a-z0-9]+", text.lower()) if len(t) > 1}
 
@@ -290,7 +259,7 @@ def business_queries(
         return {
             "mode": "custom",
             "query": query.strip(),
-            "scope_note": _scope_note(query),
+            "scope_note": scope_note(query),
             "matches": matches,
             "suggested_plan": matches[0]["tools"]
             if matches
