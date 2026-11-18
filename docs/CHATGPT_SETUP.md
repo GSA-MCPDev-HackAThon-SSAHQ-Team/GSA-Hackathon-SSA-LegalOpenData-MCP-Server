@@ -48,7 +48,7 @@ curl http://127.0.0.1:8000/health          # {"status":"healthy","service":"ssa-
 uv run python scripts/mcp_client_demo.py --url http://127.0.0.1:8000/mcp
 ```
 
-The demo should print `tools/list -> 13 tools`, a `tools/call` result and the resource and prompt
+The demo should print `tools/list -> 15 tools`, a `tools/call` result and the resource and prompt
 calls. If this fails, fix it before going further.
 
 Optional visual check: `npx @modelcontextprotocol/inspector` and connect with transport
@@ -112,11 +112,11 @@ Notes:
    | MCP server URL | `https://<your-tunnel-host>/mcp` |
    | Authentication | **None** (the server has no auth) |
 
-4. Save. ChatGPT connects and lists the tools. You should see 13 tools (`ssa_alj_*`).
+4. Save. ChatGPT connects and lists the tools. You should see 15 tools (`ssa_alj_*`).
 5. In a **new chat**, open the **+** / tools menu, choose **Developer mode** (or the connector name)
    and enable the `SSA ALJ Open Data` connector for that chat.
 
-Reference config in case a client wants JSON (Goose, Claude Code, Cursor use a similar block):
+Reference config in case a client wants JSON (Goose, Claude Code, and similar clients use a block like):
 
 ```json
 {

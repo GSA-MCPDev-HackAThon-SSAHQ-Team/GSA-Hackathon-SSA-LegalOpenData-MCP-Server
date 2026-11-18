@@ -17,6 +17,8 @@ def _data(result):
 
 EXPECTED_TOOLS = {
     "ssa_alj_list_reports",
+    "ssa_alj_business_queries",
+    "ssa_alj_source_links",
     "ssa_alj_search_judges",
     "ssa_alj_get_judge_profile",
     "ssa_alj_compare_offices",

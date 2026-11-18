@@ -213,7 +213,8 @@ def office_processing_ranking(
     Output: paginated ranking rows with `snapshot` pointing at the ranking report.
     """
     snaps = query(
-        "SELECT snapshot_id, fiscal_year, reporting_period_end, report_label FROM report_snapshot "
+        "SELECT snapshot_id, fiscal_year, reporting_period_end, report_label, "
+        "source_xml_url, source_html_url FROM report_snapshot "
         "WHERE report_kind = 'office_ranking' ORDER BY reporting_period_end DESC"
     )
     if not snaps:

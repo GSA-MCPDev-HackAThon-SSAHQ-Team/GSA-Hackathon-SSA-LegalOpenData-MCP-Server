@@ -69,12 +69,24 @@ def enrich(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def snapshot_ref(snap: dict[str, Any]) -> SnapshotRefDict:
-    """Standard `snapshot` object returned by tools that use one report period."""
-    return {
+    """Standard `snapshot` object returned by tools that use one report period.
+
+    When the row includes SSA URLs, attach `sources: {html?, xml?}` so answers are
+    checkable on ssa.gov without a separate call.
+    """
+    ref: SnapshotRefDict = {
         "period_end": snap["reporting_period_end"],
         "fiscal_year": snap["fiscal_year"],
         "report": snap["report_label"],
     }
+    sources: dict[str, str] = {}
+    if snap.get("source_html_url"):
+        sources["html"] = snap["source_html_url"]
+    if snap.get("source_xml_url"):
+        sources["xml"] = snap["source_xml_url"]
+    if sources:
+        ref["sources"] = sources
+    return ref
 
 
 def available_fiscal_years() -> list[int]:
@@ -92,7 +104,10 @@ def resolve_snapshot(
     Priority: explicit `as_of` period end > the final snapshot of `fiscal_year` > newest final
     snapshot. Returns (snapshot, None) or (None, error_payload).
     """
-    columns = "snapshot_id, fiscal_year, reporting_period_end, report_label"
+    columns = (
+        "snapshot_id, fiscal_year, reporting_period_end, report_label, "
+        "source_xml_url, source_html_url"
+    )
     if as_of:
         try:
             date.fromisoformat(as_of)

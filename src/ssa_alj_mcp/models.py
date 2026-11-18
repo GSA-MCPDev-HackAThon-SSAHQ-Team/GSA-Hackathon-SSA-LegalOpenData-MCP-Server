@@ -7,7 +7,7 @@ structured, validated inputs — not free-form strings for every parameter.
 from __future__ import annotations
 
 from enum import Enum
-from typing import Annotated, Any, Literal, TypedDict
+from typing import Annotated, Any, Literal, NotRequired, TypedDict
 
 from pydantic import BaseModel, Field
 
@@ -106,6 +106,7 @@ class SnapshotRefDict(TypedDict):
     period_end: str
     fiscal_year: int
     report: str
+    sources: NotRequired[dict[str, str]]
 
 
 class SnapshotRef(BaseModel):
@@ -114,6 +115,10 @@ class SnapshotRef(BaseModel):
     period_end: str = Field(description="ISO period end YYYY-MM-DD.")
     fiscal_year: int = Field(description="Federal fiscal year of the snapshot.")
     report: str = Field(description="SSA report label, e.g. 'September'.")
+    sources: dict[str, str] | None = Field(
+        default=None,
+        description="Optional SSA URLs for this snapshot: keys html and/or xml.",
+    )
 
 
 class ToolError(BaseModel):

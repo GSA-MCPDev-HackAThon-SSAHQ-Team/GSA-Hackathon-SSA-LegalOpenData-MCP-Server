@@ -40,13 +40,22 @@ def db_path(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     conn.executescript((PROJECT_ROOT / "db" / "schema.sql").read_text())
     for sid, fy, end, label in SNAPSHOTS:
         conn.execute(
-            "INSERT INTO report_snapshot (snapshot_id, report_kind, source_xml_url, fiscal_year, report_label, "
-            "reporting_period_end, loaded_row_count) VALUES (?, 'alj_disposition', ?, ?, ?, ?, 0)",
-            (sid, f"https://example.test/{sid}.xml", fy, label, end),
+            "INSERT INTO report_snapshot (snapshot_id, report_kind, source_xml_url, source_html_url, "
+            "fiscal_year, report_label, reporting_period_end, loaded_row_count) "
+            "VALUES (?, 'alj_disposition', ?, ?, ?, ?, ?, 0)",
+            (
+                sid,
+                f"https://example.test/{sid}.xml",
+                f"https://example.test/{sid}.html",
+                fy,
+                label,
+                end,
+            ),
         )
     conn.execute(
-        "INSERT INTO report_snapshot (snapshot_id, report_kind, source_xml_url, fiscal_year, report_label, "
-        "reporting_period_end, loaded_row_count) VALUES (9, 'office_ranking', 'https://example.test/r.xml', "
+        "INSERT INTO report_snapshot (snapshot_id, report_kind, source_xml_url, source_html_url, "
+        "fiscal_year, report_label, reporting_period_end, loaded_row_count) "
+        "VALUES (9, 'office_ranking', 'https://example.test/r.xml', 'https://example.test/r.html', "
         "2024, 'March', '2024-03-29', 2)"
     )
     conn.execute("INSERT INTO region VALUES ('04')")

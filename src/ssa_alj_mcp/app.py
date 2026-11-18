@@ -20,9 +20,11 @@ mcp = FastMCP(
     name="SSA ALJ Open Data",
     instructions=(
         "Public SSA Office of Hearings Operations ALJ disposition data (FY 2010 onward). "
-        "Thirteen tools cover coverage, judges, offices, rankings, trends, outliers, and "
-        "data-quality notes. Counts are fiscal-year-to-date; the September snapshot is the "
-        "full year. Match judges by published name only. Always cite report 'as of' dates. "
+        "Tools cover coverage, curated business queries, SSA source links for verification, "
+        "judges, offices, rankings, trends, outliers, and data-quality notes. "
+        "Counts are fiscal-year-to-date; the September snapshot is the full year. "
+        "Match judges by published name only. Always cite report 'as of' dates and offer "
+        "ssa_alj_source_links (or snapshot.sources) so users can verify on ssa.gov. "
         "Allowance rates are not case-mix adjusted and are not performance ratings."
     ),
 )

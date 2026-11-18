@@ -126,7 +126,7 @@ If keys are unavailable, Layer A gold + multihop are the scored evidence; use th
 
 | Area | Examples |
 |---|---|
-| MCP protocol | All 13 tools registered; core/analysis calls; validation errors |
+| MCP protocol | All 15 tools registered; core/analysis calls; validation errors |
 | Services | Judge/office happy paths + error payloads |
 | Analytics | Trends, outliers, movements |
 | Formatting / health | Markdown errors; `/health`-related helpers |

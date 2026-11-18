@@ -5,6 +5,7 @@ from __future__ import annotations
 from fastmcp import FastMCP
 
 from ssa_alj_mcp.tools import (
+    business_queries,
     compare_offices,
     compare_periods,
     data_quality_notes,
@@ -17,6 +18,7 @@ from ssa_alj_mcp.tools import (
     office_processing_ranking,
     outlier_report,
     search_judges,
+    source_links,
     within_office_variation,
 )
 
@@ -24,6 +26,8 @@ from ssa_alj_mcp.tools import (
 def register_tools(mcp: FastMCP) -> None:
     for module in (
         list_reports,
+        business_queries,
+        source_links,
         search_judges,
         get_judge_profile,
         compare_offices,

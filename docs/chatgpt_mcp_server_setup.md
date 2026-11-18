@@ -108,5 +108,5 @@ Paste one of these and send. Watch for a visible **tool call** (not a generic gu
 Health:  https://gsa-hackathon-ssa-legalopendata-mcp.onrender.com/health
 MCP:     https://gsa-hackathon-ssa-legalopendata-mcp.onrender.com/mcp
 Auth:    none
-Tools:   13 × ssa_alj_*
+Tools:   15 × ssa_alj_*
 ```

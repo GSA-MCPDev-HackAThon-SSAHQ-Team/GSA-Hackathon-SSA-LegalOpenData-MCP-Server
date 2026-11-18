@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     # -- Transport -------------------------------------------------------------
-    # "stdio"           local subprocess (Goose, Claude Desktop, Cursor, MCP Inspector)
+    # "stdio"           local subprocess (Goose, Claude Desktop, MCP Inspector)
     # "streamable-http" remote HTTP server. app.py also switches to HTTP automatically when a
     #                   platform injects PORT (Render, Code Engine, Databricks Apps).
     mcp_transport: str = "stdio"

@@ -17,6 +17,8 @@ def _data(result):
 
 CORE = {
     "ssa_alj_list_reports",
+    "ssa_alj_business_queries",
+    "ssa_alj_source_links",
     "ssa_alj_search_judges",
     "ssa_alj_get_judge_profile",
     "ssa_alj_compare_offices",
@@ -40,7 +42,7 @@ async def client(db_path):
         yield c
 
 
-async def test_all_thirteen_tools_registered(client):
+async def test_all_tools_registered(client):
     names = {t.name for t in await client.list_tools()}
     assert names == CORE | ANALYSIS
 

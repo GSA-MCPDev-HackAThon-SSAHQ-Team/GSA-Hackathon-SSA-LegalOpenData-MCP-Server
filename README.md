@@ -16,7 +16,7 @@ ID. An LLM cannot safely answer “how did allowance rates change?” by scrapin
 
 ## Solution
 
-This server is a **read-only MCP translation layer**: 13 tools, one resource, two prompts over a
+This server is a **read-only MCP translation layer**: 15 tools, one resource, two prompts over a
 local SQLite database built from those public files. Agents call tools; they never need to know
 XML layout or FYTD semantics.
 
@@ -32,6 +32,8 @@ XML layout or FYTD semantics.
 | Tool | Answers |
 |---|---|
 | `ssa_alj_list_reports` | Coverage and “as of” dates |
+| `ssa_alj_business_queries` | Curated analyst questions or a plan for a custom question |
+| `ssa_alj_source_links` | SSA HTML/XML URLs to verify figures on ssa.gov |
 | `ssa_alj_search_judges` | Published judge name |
 | `ssa_alj_get_judge_profile` | One judge vs national rates |
 | `ssa_alj_compare_offices` | Rank offices for a fiscal year |

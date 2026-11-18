@@ -86,6 +86,6 @@ list_reports → compare_offices(FY2024,min=1000) → get_office_profile(QUEENS)
 uv run pytest -q
 ```
 
-Covers: all 13 tools registered and callable over MCP; pagination envelope; `notes` on success; markdown `response_format`; validation failures as tool errors; missing-DB graceful payload.
+Covers: all 15 tools registered and callable over MCP; pagination envelope; `notes` on success; markdown `response_format`; validation failures as tool errors; missing-DB graceful payload.
 
 Regression: re-run the deterministic suite after code changes; refresh this document from `last_run.json`.

@@ -16,7 +16,7 @@ uv run pytest -q                # optional: 32 tests pass
 ```
 
 Pick **one** of these two launch commands and use it in both clients below. Both were tested here and
-completed the MCP handshake and `tools/list` (13 tools).
+completed the MCP handshake and `tools/list` (15 tools).
 
 | Option | Command | Args |
 |---|---|---|
@@ -50,7 +50,7 @@ npx @modelcontextprotocol/inspector .venv/bin/ssa-alj-mcp
 ```
 
 The Inspector prints a local URL (with a token). Open it, click **Connect**, then **Tools -> List Tools**
-(13 tools) and run one, e.g. `ssa_alj_list_reports`.
+(15 tools) and run one, e.g. `ssa_alj_list_reports`.
 
 If you want a server you start by hand and leave running (HTTP mode, also what ChatGPT needs), see
 [CHATGPT_SETUP.md](CHATGPT_SETUP.md): `MCP_TRANSPORT=streamable-http uv run ssa-alj-mcp`.
