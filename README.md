@@ -54,9 +54,8 @@ Pass `response_format: "markdown"` for a human-readable summary.
 
 ```bash
 uv sync
-# Requires data/ssa_alj.sqlite (git-ignored). Build once:
-uv run --group etl scripts/crawl_ssa_alj.py
-uv run scripts/load_ssa_alj.py
+# data/ssa_alj.sqlite is in the repo for Docker/Render. To rebuild from SSA XML:
+# uv run --group etl scripts/crawl_ssa_alj.py && uv run scripts/load_ssa_alj.py
 
 uv run pytest -q
 uv run ssa-alj-mcp                                          # stdio
