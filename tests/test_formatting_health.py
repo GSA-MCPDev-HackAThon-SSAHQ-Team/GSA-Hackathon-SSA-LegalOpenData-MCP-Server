@@ -36,6 +36,19 @@ def test_markdown_list():
 
 
 @pytest.mark.asyncio
+async def test_home_shows_request_mcp_url(db_path):
+    app = mcp.http_app()
+    transport = TestClient(app)
+    res = transport.get("/", headers={"host": "mcp.example.com", "x-forwarded-proto": "https"})
+    assert res.status_code == 200
+    assert res.headers["content-type"].startswith("text/html")
+    assert ">https://mcp.example.com/mcp</code>" in res.text
+    assert 'href="https://mcp.example.com/health"' in res.text
+    assert "ssa_alj_list_reports" in res.text
+    assert "List FY coverage" in res.text
+
+
+@pytest.mark.asyncio
 async def test_health_db_ok(db_path):
     # Build a minimal ASGI app from FastMCP custom routes via http_app if available.
     app = mcp.http_app()
