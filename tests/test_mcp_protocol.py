@@ -42,6 +42,17 @@ async def client(db_path):
         yield c
 
 
+async def test_national_trend_year_fields_are_series_bounds(client):
+    tools = await client.list_tools()
+    trend = next(t for t in tools if t.name == "ssa_alj_national_trend")
+    props = trend.inputSchema["properties"]
+    for name in ("from_fiscal_year", "to_fiscal_year"):
+        text = props[name]["description"]
+        assert "every year on record" in text
+        assert "latest FY-final" not in text
+    assert "group_by='region'" in (trend.description or "")
+
+
 async def test_all_tools_registered(client):
     names = {t.name for t in await client.list_tools()}
     assert names == CORE | ANALYSIS

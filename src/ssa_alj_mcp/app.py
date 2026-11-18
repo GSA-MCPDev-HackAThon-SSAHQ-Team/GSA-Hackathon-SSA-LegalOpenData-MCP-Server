@@ -25,7 +25,9 @@ mcp = FastMCP(
         "Counts are fiscal-year-to-date; the September snapshot is the full year. "
         "Match judges by published name only. Always cite report 'as of' dates and offer "
         "ssa_alj_source_links (or snapshot.sources) so users can verify on ssa.gov. "
-        "Allowance rates are not case-mix adjusted and are not performance ratings."
+        "Allowance rates are not case-mix adjusted and are not performance ratings. "
+        "Do not forecast future rates or name a judge as a best performer; the data has no "
+        "forecasting model and published counts are not a performance rating."
     ),
 )
 

@@ -6,6 +6,7 @@ Project documentation for the SSA ALJ Open Data MCP server.
 |---|---|
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Package layout, tools, data model, transports |
 | [EVALUATION.md](EVALUATION.md) | Criterion 2 — what each eval is |
+| [LEARNINGS.md](LEARNINGS.md) | MCPJam agent-eval notes and the open failed iterations |
 | [../eval/RESULTS.md](../eval/RESULTS.md) | Evaluation outcomes |
 | [AGENT_TOOLS.md](AGENT_TOOLS.md) | Criterion 3 — agent goals, not REST wrappers |
 | [CODEMAP.md](CODEMAP.md) | Where to change X |

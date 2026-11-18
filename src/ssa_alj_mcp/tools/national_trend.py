@@ -29,14 +29,35 @@ def register(mcp: FastMCP) -> None:
             ),
         ] = "national",
         region: RegionCode | None = None,
-        from_fiscal_year: FiscalYear | None = None,
-        to_fiscal_year: FiscalYear | None = None,
+        from_fiscal_year: Annotated[
+            FiscalYear | None,
+            Field(
+                description=(
+                    "First fiscal year of the series, e.g. 2015. "
+                    "Omit for every year on record. This is not a snapshot tool: "
+                    "omitting the year does not mean 'latest year only'."
+                )
+            ),
+        ] = None,
+        to_fiscal_year: Annotated[
+            FiscalYear | None,
+            Field(
+                description=(
+                    "Last fiscal year of the series, e.g. 2025. "
+                    "Omit for every year on record. Passing only the latest year "
+                    "returns one point, not a trend."
+                )
+            ),
+        ] = None,
         response_format: ResponseFormatParam = ResponseFormat.JSON,
     ) -> dict[str, Any] | str:
         """National or regional disposition series across fiscal years (FY-final snapshots).
 
-        For within-year speed-up/slow-down use ssa_alj_monthly_pace; for biggest movers between
-        two specific years use ssa_alj_compare_periods.
+        For a regional trend over time, call with group_by='region' and omit both year
+        arguments. For which offices are high or low in one year, use ssa_alj_compare_offices
+        (it already includes each office's region). For within-year speed-up or slow-down use
+        ssa_alj_monthly_pace; for biggest movers between two specific years use
+        ssa_alj_compare_periods.
         """
         payload = await asyncio.to_thread(
             trends.national_trend, group_by, region, from_fiscal_year, to_fiscal_year

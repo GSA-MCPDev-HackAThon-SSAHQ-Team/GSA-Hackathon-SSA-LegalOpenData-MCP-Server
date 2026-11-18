@@ -40,6 +40,22 @@ def test_business_queries_custom_match(db_path):
     assert any(t["name"] == "ssa_alj_compare_offices" for t in out["suggested_plan"])
 
 
+def test_business_queries_scope_note_flags_forecast_and_best_performer(db_path):
+    out = discovery.business_queries(
+        query="judge performance ranking and forecast next year"
+    )
+    assert out["scope_note"]
+    assert "no forecasting model" in out["scope_note"]
+    assert "Do not name a 'best' or 'top' judge" in out["scope_note"]
+
+
+def test_business_queries_scope_note_clear_for_factual_query(db_path):
+    out = discovery.business_queries(
+        query="highest allowance rate office fiscal year 2024 at least 1000 decisions"
+    )
+    assert out["scope_note"] is None
+
+
 def test_business_queries_bad_category(db_path):
     out = discovery.business_queries(category="not-a-category")
     assert "error" in out
