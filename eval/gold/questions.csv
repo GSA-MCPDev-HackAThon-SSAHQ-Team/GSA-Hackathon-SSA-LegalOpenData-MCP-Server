@@ -1,0 +1,16 @@
+query,responses
+"Across fiscal-year final disposition snapshots, in which US federal fiscal year was the national ALJ allowance rate the highest?",2010
+"What was the national ALJ allowance rate for fiscal year 2024, rounded to four decimal places?",0.5842
+"Among hearing offices with at least 1,000 decisions in fiscal year 2024, which office had the highest allowance rate?",QUEENS
+By how many percentage points did the CHARLESTON WV hearing office allowance rate change from fiscal year 2023 to fiscal year 2024?,11.1
+"For the Miami hearing office in fiscal year 2024, which published judge name had the highest allowance rate among judges with at least 100 decisions?","Cartledge, James C"
+"For Miami OHO in fiscal year 2024, what was the within-office allowance-rate gap in percentage points between the highest and lowest compared judges (min 100 decisions)?",41.7
+"In the latest SSA National Ranking (office processing) report available in the database, which hearing office is rank 1?",PONCE
+In which fiscal year did the count of distinct published ALJ names in the final disposition snapshot reach its peak nationally?,2017
+"True or false: SSA ALJ disposition rates in this dataset are adjusted for case mix, claimant demographics, or diagnosis.",False
+"What was the national ALJ allowance rate in fiscal year 2010, rounded to four decimal places?",0.6717
+How many distinct fiscal years appear in the fiscal-year-final disposition snapshot coverage list?,17
+"For national monthly pace in fiscal year 2024, how many consecutive cumulative snapshots (periods) does the server return?",12
+Which hearing office ranks first for processing speed (dispositions per day per ALJ) in the latest SSA National Ranking report — not allowance rate?,PONCE
+"Inside a single fiscal year (2024), how many consecutive cumulative snapshot periods does national monthly pace return — not the count of fiscal years in the national trend?",12
+"For Miami in FY2024, what is the within-office allowance-rate gap in percentage points among judges with at least 100 decisions — not a national peer z-score?",41.7

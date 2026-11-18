@@ -2,7 +2,6 @@
 __pycache__/
 *.py[codz]
 *$py.class
-
 # C extensions
 *.so
 
@@ -218,3 +217,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# SSA ALJ crawl output (raw XML, manifest, SQLite) - regenerate with scripts/
+/data/
+eval/deterministic/last_run.json
+.DS_Store
+**/.DS_Store

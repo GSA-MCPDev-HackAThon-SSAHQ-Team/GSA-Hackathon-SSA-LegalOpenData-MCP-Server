@@ -1,0 +1,471 @@
+{
+  "gold": [
+    {
+      "id": "G1",
+      "name": "highest_national_allowance_fy",
+      "call": {
+        "service": "trends",
+        "fn": "national_trend",
+        "kwargs": {}
+      },
+      "expect": {
+        "path": "highlights.highest_allowance_rate.fiscal_year",
+        "equals": 2010
+      }
+    },
+    {
+      "id": "G2",
+      "name": "fy2024_national_allowance",
+      "call": {
+        "service": "trends",
+        "fn": "national_trend",
+        "kwargs": {
+          "from_fiscal_year": 2024,
+          "to_fiscal_year": 2024
+        }
+      },
+      "expect": {
+        "path": "series.0.allowance_rate",
+        "equals": 0.5842
+      }
+    },
+    {
+      "id": "G3",
+      "name": "top_office_fy2024_min1000",
+      "call": {
+        "service": "offices",
+        "fn": "compare_offices",
+        "kwargs": {
+          "fiscal_year": 2024,
+          "min_decisions": 1000,
+          "limit": 1
+        }
+      },
+      "expect": {
+        "path": "items.0.office",
+        "equals": "QUEENS"
+      }
+    },
+    {
+      "id": "G4",
+      "name": "charleston_wv_change_pts",
+      "call": {
+        "service": "trends",
+        "fn": "compare_periods",
+        "kwargs": {
+          "entity": "office",
+          "fiscal_year_a": 2023,
+          "fiscal_year_b": 2024,
+          "name": "CHARLESTON WV"
+        }
+      },
+      "expect": {
+        "path": "change.allowance_rate_change_pts",
+        "equals": 11.1
+      }
+    },
+    {
+      "id": "G5",
+      "name": "miami_highest_judge",
+      "call": {
+        "service": "analysis",
+        "fn": "within_office_variation",
+        "kwargs": {
+          "office": "miami",
+          "fiscal_year": 2024,
+          "min_decisions": 100
+        }
+      },
+      "expect": {
+        "path": "items.0.highest.judge",
+        "equals": "Cartledge, James C"
+      }
+    },
+    {
+      "id": "G6",
+      "name": "miami_gap_pts",
+      "call": {
+        "service": "analysis",
+        "fn": "within_office_variation",
+        "kwargs": {
+          "office": "miami",
+          "fiscal_year": 2024,
+          "min_decisions": 100
+        }
+      },
+      "expect": {
+        "path": "items.0.gap_pts",
+        "equals": 41.7
+      }
+    },
+    {
+      "id": "G7",
+      "name": "ranking_rank1",
+      "call": {
+        "service": "offices",
+        "fn": "office_processing_ranking",
+        "kwargs": {
+          "limit": 1
+        }
+      },
+      "expect": {
+        "path": "items.0.office",
+        "equals": "PONCE"
+      }
+    },
+    {
+      "id": "G8",
+      "name": "peak_judges_fy",
+      "call": {
+        "service": "trends",
+        "fn": "national_trend",
+        "kwargs": {}
+      },
+      "expect": {
+        "path": "highlights.peak_judges.fiscal_year",
+        "equals": 2017
+      }
+    },
+    {
+      "id": "G9",
+      "name": "not_case_mix_adjusted",
+      "call": {
+        "service": "quality",
+        "fn": "data_quality_notes",
+        "kwargs": {}
+      },
+      "expect": {
+        "path": "not_in_dataset",
+        "contains": "No case-mix adjustment"
+      }
+    },
+    {
+      "id": "G10",
+      "name": "fy2010_allowance",
+      "call": {
+        "service": "trends",
+        "fn": "national_trend",
+        "kwargs": {
+          "from_fiscal_year": 2010,
+          "to_fiscal_year": 2010
+        }
+      },
+      "expect": {
+        "path": "series.0.allowance_rate",
+        "equals": 0.6717
+      }
+    },
+    {
+      "id": "G11",
+      "name": "fiscal_year_coverage_count",
+      "call": {
+        "service": "reports",
+        "fn": "list_reports",
+        "kwargs": {}
+      },
+      "expect": {
+        "path": "coverage.fiscal_years",
+        "length": 17
+      }
+    },
+    {
+      "id": "G12",
+      "name": "fy2024_monthly_pace_periods",
+      "call": {
+        "service": "trends",
+        "fn": "monthly_pace",
+        "kwargs": {
+          "fiscal_year": 2024
+        }
+      },
+      "expect": {
+        "path": "snapshots",
+        "equals": 12
+      }
+    }
+  ],
+  "errors": [
+    {
+      "id": "E1",
+      "name": "unknown_judge",
+      "call": {
+        "service": "judges",
+        "fn": "get_judge_profile",
+        "kwargs": {
+          "name": "Zzznobody"
+        }
+      },
+      "expect": {
+        "has_error": true,
+        "hint_present": true
+      }
+    },
+    {
+      "id": "E2",
+      "name": "unknown_office",
+      "call": {
+        "service": "offices",
+        "fn": "get_office_profile",
+        "kwargs": {
+          "office": "nowhereville"
+        }
+      },
+      "expect": {
+        "has_error": true,
+        "hint_present": true
+      }
+    },
+    {
+      "id": "E3",
+      "name": "bad_fiscal_year",
+      "call": {
+        "service": "offices",
+        "fn": "compare_offices",
+        "kwargs": {
+          "fiscal_year": 1999
+        }
+      },
+      "expect": {
+        "has_error": true,
+        "hint_present": true
+      }
+    },
+    {
+      "id": "E4",
+      "name": "bad_as_of",
+      "call": {
+        "service": "offices",
+        "fn": "compare_offices",
+        "kwargs": {
+          "as_of": "not-a-date"
+        }
+      },
+      "expect": {
+        "has_error": true,
+        "hint_present": true
+      }
+    },
+    {
+      "id": "E5",
+      "name": "bad_sort_by",
+      "call": {
+        "service": "offices",
+        "fn": "compare_offices",
+        "kwargs": {
+          "sort_by": "bogus"
+        }
+      },
+      "expect": {
+        "has_error": true,
+        "hint_present": true
+      }
+    },
+    {
+      "id": "E6",
+      "name": "ambiguous_office_compare",
+      "call": {
+        "service": "trends",
+        "fn": "compare_periods",
+        "kwargs": {
+          "entity": "office",
+          "fiscal_year_a": 2023,
+          "fiscal_year_b": 2024,
+          "name": "CHARLESTON"
+        }
+      },
+      "expect": {
+        "has_error": true
+      }
+    },
+    {
+      "id": "E7",
+      "name": "outlier_too_few_peers",
+      "call": {
+        "service": "analysis",
+        "fn": "outlier_report",
+        "kwargs": {
+          "level": "office",
+          "fiscal_year": 2024,
+          "min_decisions": 500000
+        }
+      },
+      "expect": {
+        "has_error": true,
+        "hint_present": true
+      }
+    },
+    {
+      "id": "E8",
+      "name": "bad_group_by",
+      "call": {
+        "service": "trends",
+        "fn": "national_trend",
+        "kwargs": {
+          "group_by": "planet"
+        }
+      },
+      "expect": {
+        "has_error": true
+      }
+    }
+  ],
+  "latency": [
+    {
+      "id": "L1",
+      "name": "national_trend",
+      "call": {
+        "service": "trends",
+        "fn": "national_trend",
+        "kwargs": {}
+      },
+      "repeats": 5
+    },
+    {
+      "id": "L2",
+      "name": "compare_periods_offices",
+      "call": {
+        "service": "trends",
+        "fn": "compare_periods",
+        "kwargs": {
+          "entity": "office",
+          "fiscal_year_a": 2023,
+          "fiscal_year_b": 2024,
+          "limit": 15
+        }
+      },
+      "repeats": 5
+    },
+    {
+      "id": "L3",
+      "name": "outlier_report_offices",
+      "call": {
+        "service": "analysis",
+        "fn": "outlier_report",
+        "kwargs": {
+          "level": "office",
+          "fiscal_year": 2024,
+          "limit": 25
+        }
+      },
+      "repeats": 5
+    },
+    {
+      "id": "L4",
+      "name": "monthly_pace_fy2024",
+      "call": {
+        "service": "trends",
+        "fn": "monthly_pace",
+        "kwargs": {
+          "fiscal_year": 2024
+        }
+      },
+      "repeats": 5
+    },
+    {
+      "id": "L5",
+      "name": "judge_movements_2324",
+      "call": {
+        "service": "workforce",
+        "fn": "judge_movements",
+        "kwargs": {
+          "from_fiscal_year": 2023,
+          "to_fiscal_year": 2024,
+          "include_judges": false,
+          "limit": 25
+        }
+      },
+      "repeats": 3
+    }
+  ],
+  "shape": [
+    {
+      "id": "S1",
+      "name": "compare_offices_has_notes_and_snapshot",
+      "call": {
+        "service": "offices",
+        "fn": "compare_offices",
+        "kwargs": {
+          "fiscal_year": 2024,
+          "limit": 5
+        }
+      },
+      "expect": {
+        "keys": [
+          "notes",
+          "snapshot",
+          "items",
+          "total",
+          "has_more"
+        ]
+      }
+    },
+    {
+      "id": "S2",
+      "name": "markdown_path_list_reports",
+      "call": {
+        "service": "reports",
+        "fn": "list_reports",
+        "kwargs": {}
+      },
+      "expect": {
+        "keys": [
+          "notes",
+          "coverage",
+          "fiscal_year_final_snapshots"
+        ]
+      }
+    }
+  ],
+  "tool_choice": [
+    {
+      "id": "TC1",
+      "name": "processing_speed_not_allowance",
+      "call": {
+        "service": "offices",
+        "fn": "office_processing_ranking",
+        "kwargs": {
+          "limit": 1
+        }
+      },
+      "expect": {
+        "path": "items.0.office",
+        "equals": "PONCE"
+      },
+      "wrong_sibling": "compare_offices would return QUEENS for allowance_rate"
+    },
+    {
+      "id": "TC2",
+      "name": "monthly_pace_not_national_years",
+      "call": {
+        "service": "trends",
+        "fn": "monthly_pace",
+        "kwargs": {
+          "fiscal_year": 2024
+        }
+      },
+      "expect": {
+        "path": "snapshots",
+        "equals": 12
+      },
+      "wrong_sibling": "national_trend coverage length is 17 FYs, not 12 periods"
+    },
+    {
+      "id": "TC3",
+      "name": "within_office_gap_not_outlier_z",
+      "call": {
+        "service": "analysis",
+        "fn": "within_office_variation",
+        "kwargs": {
+          "office": "miami",
+          "fiscal_year": 2024,
+          "min_decisions": 100
+        }
+      },
+      "expect": {
+        "path": "items.0.gap_pts",
+        "equals": 41.7
+      },
+      "wrong_sibling": "outlier_report answers national z-scores, not within-office gap_pts"
+    }
+  ]
+}

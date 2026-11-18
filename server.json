@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.GSA-MCPDev-HackAThon-SSAHQ-Team/ssa-alj-mcp",
+  "description": "Public SSA Administrative Law Judge (ALJ) disposition open data (FY2010 onward) as MCP tools.",
+  "repository": {
+    "url": "https://github.com/GSA-MCPDev-HackAThon-SSAHQ-Team/GSA-Hackathon-SSA-LegalOpenData-MCP-Server",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://REPLACE_AFTER_DEPLOY.onrender.com/mcp"
+    }
+  ]
+}

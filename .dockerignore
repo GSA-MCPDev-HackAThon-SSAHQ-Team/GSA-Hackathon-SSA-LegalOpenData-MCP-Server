@@ -1,0 +1,25 @@
+# Keep the build context small and reproducible.
+.git
+.gitignore
+.venv
+venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.env
+eval/
+tests/
+.github/
+
+.ruff_cache/
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# Raw crawl output (~320 MB); only data/ssa_alj.sqlite is shipped.
+data/raw/
+data/manifest.json
+scripts/

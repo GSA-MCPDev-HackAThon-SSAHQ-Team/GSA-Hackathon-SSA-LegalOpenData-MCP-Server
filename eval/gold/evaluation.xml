@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaluation>
+  <!-- Gold set for SSA ALJ MCP. Answers verified against data/ssa_alj.sqlite
+       (FY final snapshots 2010–2026 as loaded for the hackathon build). -->
+  <qa_pair>
+    <question>Across fiscal-year final disposition snapshots, in which US federal fiscal year was the national ALJ allowance rate the highest?</question>
+    <answer>2010</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>What was the national ALJ allowance rate for fiscal year 2024, rounded to four decimal places?</question>
+    <answer>0.5842</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Among hearing offices with at least 1,000 decisions in fiscal year 2024, which office had the highest allowance rate?</question>
+    <answer>QUEENS</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>By how many percentage points did the CHARLESTON WV hearing office allowance rate change from fiscal year 2023 to fiscal year 2024?</question>
+    <answer>11.1</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>For the Miami hearing office in fiscal year 2024, which published judge name had the highest allowance rate among judges with at least 100 decisions?</question>
+    <answer>Cartledge, James C</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>For Miami OHO in fiscal year 2024, what was the within-office allowance-rate gap in percentage points between the highest and lowest compared judges (min 100 decisions)?</question>
+    <answer>41.7</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>In the latest SSA National Ranking (office processing) report available in the database, which hearing office is rank 1?</question>
+    <answer>PONCE</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>In which fiscal year did the count of distinct published ALJ names in the final disposition snapshot reach its peak nationally?</question>
+    <answer>2017</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>True or false: SSA ALJ disposition rates in this dataset are adjusted for case mix, claimant demographics, or diagnosis.</question>
+    <answer>False</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>What was the national ALJ allowance rate in fiscal year 2010, rounded to four decimal places?</question>
+    <answer>0.6717</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>How many distinct fiscal years appear in the fiscal-year-final disposition snapshot coverage list?</question>
+    <answer>17</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>For national monthly pace in fiscal year 2024, how many consecutive cumulative snapshots (periods) does the server return?</question>
+    <answer>12</answer>
+  </qa_pair>
+
+  <!-- Tool-choice probes: correct sibling tool required (Criterion 3) -->
+  <qa_pair>
+    <question>Which hearing office ranks first for processing speed (dispositions per day per ALJ) in the latest SSA National Ranking report — not allowance rate?</question>
+    <answer>PONCE</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Inside a single fiscal year (2024), how many consecutive cumulative snapshot periods does national monthly pace return — not the count of fiscal years in the national trend?</question>
+    <answer>12</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>For Miami in FY2024, what is the within-office allowance-rate gap in percentage points among judges with at least 100 decisions — not a national peer z-score?</question>
+    <answer>41.7</answer>
+  </qa_pair>
+</evaluation>

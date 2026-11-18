@@ -1,0 +1,50 @@
+[project]
+name = "ssa-alj-mcp"
+version = "0.1.0"
+description = "MCP server for SSA Administrative Law Judge (ALJ) disposition open data"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.scripts]
+# `uv run ssa-alj-mcp` starts the server (stdio locally, HTTP when PORT is set).
+ssa-alj-mcp = "ssa_alj_mcp.app:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ssa_alj_mcp"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.6.0",
+]
+# Data pipeline only (crawl SSA + load SQLite). Not needed to run the server.
+#   uv run --group etl scripts/crawl_ssa_alj.py
+etl = [
+    # www.ssa.gov's CDN answers 403 to plain curl/requests/httpx; curl_cffi impersonates Chrome's TLS.
+    "curl_cffi>=0.7",
+]
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [".venv", "data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+# Long lines are accepted in tool signatures (Field descriptions) - the formatter handles the rest.
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = ["ignore::DeprecationWarning"]
