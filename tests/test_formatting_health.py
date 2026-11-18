@@ -46,6 +46,7 @@ async def test_home_shows_request_mcp_url(db_path):
     assert 'href="https://mcp.example.com/health"' in res.text
     assert "ssa_alj_list_reports" in res.text
     assert "List FY coverage" in res.text
+    assert "<h1>SSA Administrative Law Judge (ALJ) Open Data</h1>" in res.text
 
 
 @pytest.mark.asyncio

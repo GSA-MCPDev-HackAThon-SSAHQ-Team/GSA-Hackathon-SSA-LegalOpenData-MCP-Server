@@ -56,7 +56,7 @@ def _home_page(mcp_url: str, health_url: str, tools: list) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SSA ALJ Open Data</title>
+  <title>SSA Administrative Law Judge (ALJ) Open Data</title>
   <style>
     :root {{
       color-scheme: light;
@@ -161,7 +161,7 @@ def _home_page(mcp_url: str, health_url: str, tools: list) -> str:
 <body>
   <main>
     <p>MCP server</p>
-    <h1>SSA ALJ Open Data</h1>
+    <h1>SSA Administrative Law Judge (ALJ) Open Data</h1>
     <div class="url">
       <span class="label">MCP</span>
       <code id="mcp-url">{mcp}</code>
