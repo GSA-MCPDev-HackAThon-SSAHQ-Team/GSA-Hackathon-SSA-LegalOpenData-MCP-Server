@@ -74,7 +74,7 @@ def _home_page(mcp_url: str, health_url: str, tools: list) -> str:
       font-family: "Iowan Old Style", Palatino, Georgia, serif;
     }}
     main {{
-      width: min(46rem, calc(100% - 2.5rem));
+      width: min(52rem, calc(100% - 2.5rem));
       margin: 0 auto;
       padding: 3.25rem 0 4rem;
     }}
@@ -129,10 +129,19 @@ def _home_page(mcp_url: str, health_url: str, tools: list) -> str:
       font-size: 0.92rem;
       word-break: break-all;
     }}
+    #mcp-url {{
+      flex: 1;
+      min-width: 0;
+      font-size: 0.84rem;
+      white-space: nowrap;
+      word-break: normal;
+    }}
+    @media (max-width: 55rem) {{
+      #mcp-url {{ white-space: normal; word-break: break-all; }}
+    }}
     a {{ flex: 1; color: inherit; text-decoration: none; }}
     a:hover {{ text-decoration: underline; }}
     h1 a {{ font: inherit; letter-spacing: inherit; word-break: normal; }}
-    #mcp-url {{ flex: 1; }}
     button {{
       flex: none;
       border: 0;
