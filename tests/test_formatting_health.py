@@ -43,10 +43,22 @@ async def test_home_shows_request_mcp_url(db_path):
     assert res.status_code == 200
     assert res.headers["content-type"].startswith("text/html")
     assert ">https://mcp.example.com/mcp</code>" in res.text
+    assert ">MCP URL</span>" in res.text
+    assert '<span class="proto">Streamable HTTP</span>' in res.text
     assert 'href="https://mcp.example.com/health"' in res.text
     assert "ssa_alj_list_reports" in res.text
     assert "List FY coverage" in res.text
-    assert "<h1>SSA Administrative Law Judge (ALJ) Open Data</h1>" in res.text
+    assert "SSA Administrative Law Judges (ALJ) Open Data</a></h1>" in res.text
+    assert 'href="https://catalog.data.gov/?q=ALJ%20Disposition%20Data' in res.text
+    assert "<h2>Architecture</h2>" in res.text
+    assert "Claude Desktop" in res.text
+    assert "Remote hosted MCP server" in res.text
+    assert "Resources" in res.text and "Prompts" in res.text
+    assert "<h2>MCP Flow</h2>" in res.text
+    assert "POST /mcp" in res.text
+    assert "<title>SSA ALJ MCP - GSA SI HackAThon</title>" in res.text
+    assert ">GSA MCP SI HACKATHON</a></p>" in res.text
+    assert "mcp-server-and-si-agent-government-hackathon" in res.text
 
 
 @pytest.mark.asyncio
