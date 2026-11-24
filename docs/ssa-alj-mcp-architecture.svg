@@ -45,10 +45,17 @@
       <tspan fill="#6b7280">  http://127.0.0.1:8000/mcp</tspan>
     </text>
   </g>
-  <rect x="500" y="286" width="280" height="148" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5"/>
-  <text x="640" y="338" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#4c1d95">SSA ALJ MCP Server</text>
-  <text x="640" y="368" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#6b7280">FastMCP · route, guard, query</text>
-  <text x="640" y="394" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#6b7280">Tools · Resources · Prompts</text>
+  <rect x="500" y="278" width="280" height="196" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="640" y="308" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#4c1d95">SSA ALJ MCP Server</text>
+  <text x="640" y="328" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">FastMCP · route, guard, query</text>
+  <g font-family="ui-sans-serif, Helvetica, Arial, sans-serif">
+    <rect x="520" y="344" width="240" height="36" rx="8" fill="#faf5ff" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="640" y="367" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6" letter-spacing="0.04em">TOOLS</text>
+    <rect x="520" y="388" width="240" height="36" rx="8" fill="#faf5ff" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="640" y="411" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6" letter-spacing="0.04em">RESOURCES</text>
+    <rect x="520" y="432" width="240" height="36" rx="8" fill="#faf5ff" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="640" y="455" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6" letter-spacing="0.03em">SKILLS / PROMPTS</text>
+  </g>
 
   <!-- Right boxes -->
   <g font-family="ui-sans-serif, Helvetica, Arial, sans-serif">
