@@ -360,8 +360,86 @@ def slide_decision_tools(prs):
             section("Criterion fit"),
             bullet("C1 — clear module boundaries", size=12),
             bullet("C3 — agent-facing actions, not thin wrappers", size=12),
+            muted("Next: how 15 tools consolidate into those three groups", size=11, space_after=0),
         ],
     )
+
+
+def slide_tool_groups(prs):
+    """Key design: consolidate 15 goal tools into discovery / lookup / analysis."""
+    s = blank(prs)
+    add_header(s, "Key Design — Tool Grouping: 15 → 3")
+    add_footer_rule(s)
+
+    _, tf = textbox(s, MARGIN_X, BODY_TOP, BODY_W, Inches(0.55))
+    write_lines(
+        tf,
+        [
+            body(
+                "Agents pick by intent, not by scanning a flat list of 15 names. "
+                "Each tool carries FastMCP tags + meta.category so hosts can filter.",
+                size=12,
+                space_after=4,
+            ),
+        ],
+    )
+
+    gap = Inches(0.18)
+    card_w = (BODY_W - 2 * gap) / 3
+    card_h = Inches(3.55)
+    top = BODY_TOP + Inches(0.55)
+    groups = [
+        (
+            "Discovery · 4",
+            "Orient & verify",
+            [
+                "list_reports",
+                "business_queries",
+                "source_links",
+                "data_quality_notes",
+            ],
+        ),
+        (
+            "Lookup · 5",
+            "Find a judge or office",
+            [
+                "search_judges",
+                "get_judge_profile",
+                "compare_offices",
+                "get_office_profile",
+                "office_processing_ranking",
+            ],
+        ),
+        (
+            "Analysis · 6",
+            "Derive insight over time",
+            [
+                "national_trend",
+                "monthly_pace",
+                "compare_periods",
+                "outlier_report",
+                "within_office_variation",
+                "judge_movements",
+            ],
+        ),
+    ]
+    for i, (title, subtitle, tools) in enumerate(groups):
+        left = MARGIN_X + i * (card_w + gap)
+        card(s, left, top, card_w, card_h)
+        _, tf = textbox(
+            s,
+            left + Inches(0.16),
+            top + Inches(0.14),
+            card_w - Inches(0.32),
+            card_h - Inches(0.28),
+        )
+        lines = [
+            section(title, space_before=0),
+            muted(subtitle, size=11, space_after=6),
+        ]
+        for name in tools:
+            lines.append(bullet(name, size=11, space_after=4))
+        write_lines(tf, lines)
 
 
 def slide_decision_pydantic(prs):
@@ -644,6 +722,7 @@ def build_pptx():
     slide_architecture(prs)
     slide_decision_etl(prs)
     slide_decision_tools(prs)
+    slide_tool_groups(prs)
     slide_decision_pydantic(prs)
     slide_demo(prs)
     slide_demo_mcpjam(prs)
