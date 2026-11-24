@@ -56,7 +56,7 @@ async def test_home_shows_request_mcp_url(db_path):
     assert "Resources" in res.text and "Prompts" in res.text
     assert "<h2>MCP Flow</h2>" in res.text
     assert "POST /mcp" in res.text
-    assert "<title>SSA ALJ MCP - GSA SI HackAThon</title>" in res.text
+    assert "<title>SSA-ALJ-MCPSERVER-GSAHACKATHON</title>" in res.text
     assert ">GSA MCP SI HACKATHON</a></p>" in res.text
     assert "mcp-server-and-si-agent-government-hackathon" in res.text
 

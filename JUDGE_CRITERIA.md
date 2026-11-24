@@ -85,5 +85,7 @@ Whether the server is built to a professional standard — readable, reliable, a
 **How this project meets it**
 
 - **Story:** Problem (unusable FYTD XML) → Solution (read-only MCP translation layer) → Tools table and run instructions in the [README](README.md).
-- **Demo path:** stdio local clients → streamable-HTTP `/mcp` → Inspector / `mcp_client_demo.py` → Docker/Render; setup docs under [`docs/`](docs/).
+- **Demo path:** [`docs/demo/demo.md`](docs/demo/demo.md) (Claude Desktop + MCPJam screenshots); also stdio / HTTP / Inspector — see [`docs/`](docs/).
+- **Slide deck:** [`docs/demo/SSA-ALJ-MCP-Hackathon-Deck.pptx`](docs/demo/SSA-ALJ-MCP-Hackathon-Deck.pptx) (official sample template, SSA ALJ content).
+- **Evaluation DOCX:** [`docs/demo/SSA-ALJ-MCP-Evaluation-Document.docx`](docs/demo/SSA-ALJ-MCP-Evaluation-Document.docx).
 - **Evidence pack:** [`eval/RESULTS.md`](eval/RESULTS.md), [`eval/sdk/RESULTS.md`](eval/sdk/RESULTS.md), screenshot gallery, gold questions in [`eval/gold/`](eval/gold/), architecture and data-prep diagrams in [`docs/`](docs/).

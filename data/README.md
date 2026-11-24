@@ -21,6 +21,8 @@ claimant PII.
 **Live server using this dataset:** [https://www.ssa-alj-mcpserver-gsahackathon.online/](https://www.ssa-alj-mcpserver-gsahackathon.online/)  
 MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp`
 
+**Project docs:** [Architecture](../docs/ARCHITECTURE.md) · [Demo walkthrough](../docs/demo/demo.md)
+
 ## Layout
 
 | Path | Role |

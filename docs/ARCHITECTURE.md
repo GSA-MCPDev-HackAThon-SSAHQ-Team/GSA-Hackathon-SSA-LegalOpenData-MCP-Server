@@ -1,5 +1,7 @@
 # Architecture — SSA ALJ Open Data MCP Server
 
+**Demo walkthrough:** [demo/demo.md](demo/demo.md) · Live: [https://www.ssa-alj-mcpserver-gsahackathon.online/](https://www.ssa-alj-mcpserver-gsahackathon.online/)
+
 This server is a thin, read-only MCP layer over public SSA hearing-office ALJ disposition
 data (fiscal years 2010–2026). Clients ask questions; the server answers from a local SQLite
 file. It never scrapes SSA at request time and never invents FYTD semantics in the model’s head.

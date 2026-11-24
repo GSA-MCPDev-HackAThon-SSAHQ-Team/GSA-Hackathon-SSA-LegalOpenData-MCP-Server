@@ -21,7 +21,7 @@ One-page guide for skimming the repo. Runtime MCP code lives under `src/ssa_alj_
 | Tests | `tests/` (synthetic DB fixtures in `conftest.py`) |
 | Evaluation / Criterion 2 | [EVALUATION.md](EVALUATION.md) → `eval/RESULTS.md`; code in `eval/deterministic/`, gold in `eval/gold/`, MCPJam in `eval/mcpjam/`, optional `mcpevals` in `eval/sdk/` |
 | Hackathon judging map | [JUDGE_CRITERIA.md](../JUDGE_CRITERIA.md) (Criteria 1–3, innovation, mission, presentation) |
-| Live demo script | [demo.md](demo.md) |
+| Live demo script | [demo/demo.md](demo/demo.md) |
 | Client / Docker / protocol docs | `docs/` |
 
 ## Layering (do not blur)

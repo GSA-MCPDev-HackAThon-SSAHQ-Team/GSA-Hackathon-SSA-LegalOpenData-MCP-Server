@@ -75,7 +75,7 @@ def _home_page(mcp_url: str, health_url: str, tools: list) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SSA ALJ MCP - GSA SI HackAThon</title>
+  <title>SSA-ALJ-MCPSERVER-GSAHACKATHON</title>
   <style>
     :root {{
       color-scheme: light;

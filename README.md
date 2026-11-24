@@ -3,12 +3,14 @@
 MCP (Model Context Protocol) server over **public** SSA Office of Hearings Operations
 Administrative Law Judge disposition data (fiscal years 2010–2026).
 
-Built for the [GSA MCP Server & SI Agent Government Hackathon](https://www.gsa.gov/super-intelligence/si-community-of-practice/events-and-training/mcp-server-and-si-agent-government-hackathon)
-(Dataset Access Server). Layout follows the
-[GSA-TTS/mcp-hackathon-template](https://github.com/GSA-TTS/mcp-hackathon-template).
+Built for the [GSA MCP Server & SI Agent Government Hackathon](https://www.gsa.gov/super-intelligence/si-community-of-practice/events-and-training/mcp-server-and-si-agent-government-hackathon).
 
 **Live demo:** [https://www.ssa-alj-mcpserver-gsahackathon.online/](https://www.ssa-alj-mcpserver-gsahackathon.online/)  
-MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp` · Walkthrough: [docs/demo.md](docs/demo.md)
+MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp`  
+**Demo walkthrough (Claude Desktop + screenshots):** [docs/demo/demo.md](docs/demo/demo.md)  
+**Presentation deck:** [docs/demo/SSA-ALJ-MCP-Hackathon-Deck.pptx](docs/demo/SSA-ALJ-MCP-Hackathon-Deck.pptx)  
+**Evaluation document:** [docs/demo/SSA-ALJ-MCP-Evaluation-Document.docx](docs/demo/SSA-ALJ-MCP-Evaluation-Document.docx)  
+**Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
 ## Problem
 
@@ -67,6 +69,7 @@ uv run ssa-alj-mcp                                          # stdio
 MCP_TRANSPORT=streamable-http uv run ssa-alj-mcp            # http://127.0.0.1:8000/mcp
 ```
 
+- Demo walkthrough: [docs/demo/demo.md](docs/demo/demo.md) (live URL, Claude Desktop connector, sample prompts)
 - Protocol walkthrough: `uv run python data/scripts/mcp_client_demo.py`
 - Inspector: `npx @modelcontextprotocol/inspector .venv/bin/ssa-alj-mcp`
 - Local clients: [docs/LOCAL_STDIO_SETUP.md](docs/LOCAL_STDIO_SETUP.md) (Goose, Claude Desktop)
@@ -94,6 +97,7 @@ data/db/schema.sql   SQLite schema + views
 data/scripts/        Offline ETL (crawl + load) — not part of MCP runtime
 eval/                Deterministic harness + optional mcpevals SDK (`eval/sdk/`) + RESULTS.md
 docs/                architecture, client setup, Docker smoke, protocol
+docs/demo/           Live demo walkthrough + screenshots (`demo.md`)
 Dockerfile           streamable-HTTP image (copies data/ssa_alj.sqlite when present)
 ```
 
