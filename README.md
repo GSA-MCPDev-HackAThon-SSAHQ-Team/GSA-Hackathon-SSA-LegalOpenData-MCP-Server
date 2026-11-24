@@ -33,6 +33,16 @@ XML layout or FYTD semantics.
 | **Prompts** | `compare_office_outcomes`, `judge_summary` |
 | **Transports** | stdio (local clients) · streamable-HTTP (`/mcp`) for remote |
 
+## Diagrams
+
+MCP hosts → FastMCP server → read-only SQLite:
+
+![SSA ALJ MCP Server architecture](docs/ssa-alj-mcp-architecture.jpg)
+
+Offline crawl/load builds `ssa_alj.sqlite`; the MCP server only reads it:
+
+![SSA ALJ data prep and maintenance](docs/ssa-alj-data-prep-flow.jpg)
+
 ## Tools
 
 | Tool | Answers |
