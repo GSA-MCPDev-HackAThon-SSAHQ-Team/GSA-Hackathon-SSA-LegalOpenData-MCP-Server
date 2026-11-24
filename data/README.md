@@ -27,15 +27,11 @@ MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp`
 
 MCP hosts → FastMCP server → read-only SQLite (same diagrams as [ARCHITECTURE.md](../docs/ARCHITECTURE.md)):
 
-![SSA ALJ MCP Server architecture](../docs/ssa-alj-mcp-architecture.svg)
-
-Raster: [`ssa-alj-mcp-architecture.jpg`](../docs/ssa-alj-mcp-architecture.jpg).
+![SSA ALJ MCP Server architecture](../docs/ssa-alj-mcp-architecture.jpg)
 
 Offline crawl/load builds `ssa_alj.sqlite`; the MCP server only reads it:
 
-![SSA ALJ data prep and maintenance](../docs/ssa-alj-data-prep-flow.svg)
-
-Raster: [`ssa-alj-data-prep-flow.jpg`](../docs/ssa-alj-data-prep-flow.jpg).
+![SSA ALJ data prep and maintenance](../docs/ssa-alj-data-prep-flow.jpg)
 
 ## Layout
 
