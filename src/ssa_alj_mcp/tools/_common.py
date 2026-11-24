@@ -17,6 +17,16 @@ READ_ONLY = {
     "openWorldHint": False,  # fixed local dataset, no outbound calls
 }
 
+# Client-facing groups (FastMCP tags + meta.category). Keep in sync with resources/about.py.
+DISCOVERY = "discovery"
+LOOKUP = "lookup"
+ANALYSIS = "analysis"
+
+
+def tool_group(category: str) -> dict[str, Any]:
+    """Kwargs for @mcp.tool: tags={category}, meta={category: …}."""
+    return {"tags": {category}, "meta": {"category": category}}
+
 ResponseFormatParam = Annotated[
     ResponseFormat,
     Field(

@@ -9,12 +9,20 @@ from fastmcp import FastMCP
 
 from ssa_alj_mcp.models import FiscalYear, OfficeQuery, ResponseFormat
 from ssa_alj_mcp.services import offices
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, refusal_for, shaped
+from ssa_alj_mcp.tools._common import (
+    LOOKUP,
+    ResponseFormatParam,
+    annotations,
+    refusal_for,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_get_office_profile",
+        **tool_group(LOOKUP),
         annotations=annotations("Multi-year disposition profile for one hearing office"),
     )
     async def ssa_alj_get_office_profile(

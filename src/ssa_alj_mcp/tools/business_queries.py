@@ -11,17 +11,20 @@ from pydantic import Field
 from ssa_alj_mcp.models import PaginationParams, ResponseFormat
 from ssa_alj_mcp.services import discovery
 from ssa_alj_mcp.tools._common import (
+    DISCOVERY,
     ResponseFormatParam,
     annotations,
     page_args,
     refusal_for,
     shaped,
+    tool_group,
 )
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_business_queries",
+        **tool_group(DISCOVERY),
         annotations=annotations("List or match curated SSA ALJ business questions"),
     )
     async def ssa_alj_business_queries(

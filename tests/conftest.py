@@ -1,4 +1,4 @@
-"""Fixtures: a tiny synthetic SQLite DB built from db/schema.sql (no network, no real data)."""
+"""Fixtures: a tiny synthetic SQLite DB built from data/db/schema.sql (no network, no real data)."""
 
 from __future__ import annotations
 
@@ -37,7 +37,7 @@ ROWS = [
 def db_path(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     path = tmp_path / "test.sqlite"
     conn = sqlite3.connect(path)
-    conn.executescript((PROJECT_ROOT / "db" / "schema.sql").read_text())
+    conn.executescript((PROJECT_ROOT / "data" / "db" / "schema.sql").read_text())
     for sid, fy, end, label in SNAPSHOTS:
         conn.execute(
             "INSERT INTO report_snapshot (snapshot_id, report_kind, source_xml_url, source_html_url, "

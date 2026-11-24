@@ -9,12 +9,19 @@ from fastmcp import FastMCP
 
 from ssa_alj_mcp.models import FiscalYear, ResponseFormat
 from ssa_alj_mcp.services import reports
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, shaped
+from ssa_alj_mcp.tools._common import (
+    DISCOVERY,
+    ResponseFormatParam,
+    annotations,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_list_reports",
+        **tool_group(DISCOVERY),
         annotations=annotations("List FY coverage and report 'as of' dates"),
     )
     async def ssa_alj_list_reports(

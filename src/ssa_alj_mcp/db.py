@@ -1,4 +1,4 @@
-"""Read-only access to the SQLite database built by `scripts/load_ssa_alj.py`.
+"""Read-only access to the SQLite database built by `data/scripts/load_ssa_alj.py`.
 
 The server never writes to the database and never makes outbound network requests, so a
 malformed tool argument can at worst produce a (parameterised) read query.

@@ -10,11 +10,11 @@ The server speaks two protocol eras, and the demo can show both:
 The FastMCP client picks the modern era automatically when the server supports it.
 
 Usage:
-  uv run python scripts/mcp_client_demo.py                       # spawns the server over stdio
-  uv run python scripts/mcp_client_demo.py --legacy              # force the initialize handshake
-  uv run python scripts/mcp_client_demo.py --url http://127.0.0.1:8000/mcp   # remote / HTTP server
-  uv run python scripts/mcp_client_demo.py --raw --url http://127.0.0.1:8000/mcp            # raw, legacy
-  uv run python scripts/mcp_client_demo.py --raw --modern --url http://127.0.0.1:8000/mcp   # raw, modern
+  uv run python data/scripts/mcp_client_demo.py                       # spawns the server over stdio
+  uv run python data/scripts/mcp_client_demo.py --legacy              # force the initialize handshake
+  uv run python data/scripts/mcp_client_demo.py --url http://127.0.0.1:8000/mcp   # remote / HTTP server
+  uv run python data/scripts/mcp_client_demo.py --raw --url http://127.0.0.1:8000/mcp            # raw, legacy
+  uv run python data/scripts/mcp_client_demo.py --raw --modern --url http://127.0.0.1:8000/mcp   # raw, modern
 
 Start an HTTP server first with:  MCP_TRANSPORT=streamable-http uv run ssa-alj-mcp
 """
@@ -34,7 +34,7 @@ from fastmcp import Client
 from fastmcp.client.transports import StdioTransport
 from mcp.shared.exceptions import MCPError
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def show(method: str, summary: Any) -> None:

@@ -3,7 +3,9 @@
 How this repo tests the SSA ALJ MCP server for **Criterion 2** (performance & reliability): what each eval is, what inputs it uses, and how to read the outcomes.
 
 **Recorded scores:** [eval/RESULTS.md](../eval/RESULTS.md)  
-**Index / commands:** [eval/README.md](../eval/README.md)
+**Index / commands:** [eval/README.md](../eval/README.md)  
+**MCPJam corrected cases:** [eval/mcpjam/ssa-alj-agent-cases.md](../eval/mcpjam/ssa-alj-agent-cases.md)  
+**External screenshots:** [eval/screenshots/](../eval/screenshots/) — mcpevals.ai (16/16 tools), MCP Playground (3/3), and [MCPJam](https://app.mcpjam.com/) agent suite ([live suite](https://app.mcpjam.com/p/v97c3xpqc4pncp96erm94b06n18jf6sj/evaluate/suite/md7581a91f0rvddjatv66zd8md8je0qa), Claude / ChatGPT / Cursor clients; Run #1 = 71%). Embedded in [RESULTS.md](../eval/RESULTS.md); failure analysis in [LEARNINGS.md](LEARNINGS.md).
 
 ---
 
@@ -13,15 +15,23 @@ How this repo tests the SSA ALJ MCP server for **Criterion 2** (performance & re
 |---|---|---|---|---|
 | Layer A — deterministic suites | No | Real `data/ssa_alj.sqlite` | `eval/deterministic/` | Exact answers, tool-choice siblings, errors, latency, HTTP health |
 | Layer A — scripted multihop | No | Real DB | same runner | Multi-tool path without an agent |
-| Layer B — Phoenix agent | Yes | Real DB (via stdio server) | `eval/phoenix/` | LLM tool-use + judge labels |
-| CI unit / MCP protocol | No | Synthetic SQLite | `tests/` | Regression safety net |
-| Manual client runbook | Optional | Real DB | `eval/manual/` | Goose / Claude / ChatGPT prompts |
+| Layer B — mcpevals SDK | Yes | Real DB via stdio server | `eval/sdk/` (nested uv project) | Agent tool choice + refusal (`Expect.*`) |
+| MCPJam agent suite | Yes (host) | Deployed or local `/mcp` | `eval/mcpjam/` (case text + notes) | Tool selection, refusal, regional trends |
+| CI unit / MCP protocol | No | Synthetic SQLite | `tests/` | Regression safety net (15 tools, tags, guardrails) |
 
 Reproduce Layer A:
 
 ```bash
 uv run python eval/deterministic/run_eval.py --http
 ```
+
+Optional Layer B (`mcpevals`; needs `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`):
+
+```bash
+cd eval/sdk && uv sync && uv run pytest -q
+```
+
+See [eval/sdk/README.md](../eval/sdk/README.md). Nested project keeps MCP SDK 1.x for `mcp-agent` while the server stays on FastMCP 4 / mcp 2.x.
 
 ---
 
@@ -37,7 +47,7 @@ One runner (`run_eval.py`) loads cases from `cases.json` and writes `last_run.js
 
 **Checks:** A JSON path equals an expected value (FY, rate, office name, gap_pts, etc.).
 
-**Natural-language twins:** Same 12 questions live in `eval/phoenix/datasets/ssa-alj-eval-0/evaluation.xml` for Layer B.
+**Natural-language twins:** Same 12 questions live in [`eval/gold/evaluation.xml`](../eval/gold/evaluation.xml) (and [`questions.csv`](../eval/gold/questions.csv)).
 
 | ID | What it verifies (short) |
 |---|---|
@@ -100,23 +110,38 @@ must use `office_processing_ranking` (PONCE), not `compare_offices` (QUEENS on a
 
 ---
 
-## Layer B — Phoenix agent (`eval/phoenix/`)
+## Layer B — mcpevals SDK (`eval/sdk/`)
 
-**Purpose:** Measure whether an LLM with **only** this MCP server’s tools can answer the gold questions.
+**Purpose:** Same class of agent checks as MCPJam, but code-defined in pytest via PyPI `mcpevals`
+(`Expect.tools.was_called`, content regex). Spawns this repo’s server over stdio.
+
+**Needs:** `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`. Offline smoke tests in that folder run without a key.
+
+**Tests & results (separate MD):** [`eval/sdk/RESULTS.md`](../eval/sdk/RESULTS.md) — not mixed into [`eval/RESULTS.md`](../eval/RESULTS.md).  
+Setup: [`eval/sdk/README.md`](../eval/sdk/README.md).
+
+**Not the same as** the hosted [mcpevals.ai](https://mcpevals.ai) screenshots under `eval/screenshots/`.
+
+---
+
+## MCPJam agent suite (`eval/mcpjam/`)
+
+**Purpose:** Measure whether a real MCP host (Claude Desktop, ChatGPT, Cursor) with **only** this
+server’s tools can answer analyst questions and refuse forecasts.
 
 | Piece | Role |
 |---|---|
-| `datasets/ssa-alj-eval-0/` | 12 Q/A (`evaluation.xml` + CSV) |
-| `agent.py` (`SsaAljAgent`) | Launches server over stdio; LangChain + tools |
-| `prompts/system_prompt_v1.txt` | Basic analyst conventions |
-| `prompts/system_prompt_v2.txt` | + explicit in/out-of-scope rules |
-| `judges/correctness_judge.py` | Gold match (`correct` / `incorrect`) |
-| `judges/relevance_judge.py` | Scope (`within_scope` / `out_of_scope`) |
-| `create_dataset.py` / `run_experiment.py` | Upload dataset + run experiment |
+| [`ssa-alj-agent-cases.md`](../eval/mcpjam/ssa-alj-agent-cases.md) | Corrected Import-test-cases text (A1–A6, E1–E4 already reflected) |
+| Refusal / regional notes | Run #1 traces; see [LEARNINGS.md](LEARNINGS.md) §4–§7 |
+| Screenshots | [`eval/screenshots/mcpjam/`](../eval/screenshots/mcpjam/) |
 
-Needs `uv sync --group eval` and USAI keys in `.env` (see `.env.example`). Details: [eval/phoenix/README.md](../eval/phoenix/README.md).
+Paste [`ssa-alj-agent-cases.md`](../eval/mcpjam/ssa-alj-agent-cases.md) into the MCPJam suite editor
+before re-running. Do not require `ssa_alj_source_links` when snapshot tools already embed
+`snapshot.sources`, and do not use “No tool should be called” on the refusal case.
 
-If keys are unavailable, Layer A gold + multihop are the scored evidence; use the manual runbook for interactive demos.
+Server-side fixes already in this repo (re-run after deploy): B1/B2 (`scope_note` + instructions),
+S1/S2 (`national_trend` year-field series bounds), PII/security guardrails, tool
+`meta.category` groups (`discovery` / `lookup` / `analysis`).
 
 ---
 
@@ -126,9 +151,10 @@ If keys are unavailable, Layer A gold + multihop are the scored evidence; use th
 
 | Area | Examples |
 |---|---|
-| MCP protocol | All 15 tools registered; core/analysis calls; validation errors |
+| MCP protocol | All 15 tools registered; `meta.category` tags; validation errors |
 | Services | Judge/office happy paths + error payloads |
 | Analytics | Trends, outliers, movements |
+| Discovery / guardrails | `scope_note`; PII/security refusals |
 | Formatting / health | Markdown errors; `/health`-related helpers |
 
 ```bash
@@ -139,15 +165,10 @@ These complement Layer A: CI catches breakage without requiring the 40MB SQLite 
 
 ---
 
-## Manual runbook (`eval/manual/`)
-
-Suggested prompts for Goose, Claude Desktop, or ChatGPT — including an out-of-scope “is this judge biased?” probe that should refuse and cite caveats. See [AGENT_RUNBOOK.md](../eval/manual/AGENT_RUNBOOK.md).
-
----
-
 ## Suggested reading order for judges
 
 1. This page — what each eval means  
 2. [eval/RESULTS.md](../eval/RESULTS.md) — dated outcomes  
 3. `eval/deterministic/last_run.json` — machine-readable log  
-4. Optionally Layer B traces in Phoenix after a keyed run  
+4. [LEARNINGS.md](LEARNINGS.md) — MCPJam Run #1 failures and applied fixes  
+5. [eval/mcpjam/ssa-alj-agent-cases.md](../eval/mcpjam/ssa-alj-agent-cases.md) — corrected agent cases  

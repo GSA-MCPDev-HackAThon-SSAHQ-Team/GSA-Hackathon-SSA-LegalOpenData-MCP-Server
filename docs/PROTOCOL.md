@@ -11,6 +11,6 @@ FastMCP 4 / current MCP SDKs speak two wire eras. This server supports both.
 
 Local clients (Claude Desktop, Goose) typically use the **legacy** handshake over stdio.
 The FastMCP Python client defaults to the **modern** era (`mode="auto"`); pass `--legacy` to
-`scripts/mcp_client_demo.py` to force initialize + ping.
+`data/scripts/mcp_client_demo.py` to force initialize + ping.
 
 See [docs/README.md](README.md) for the method table and demo commands.

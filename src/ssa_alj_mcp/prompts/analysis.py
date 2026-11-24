@@ -13,7 +13,8 @@ def register(mcp: FastMCP) -> None:
         return (
             f"Using the SSA ALJ tools, compare hearing offices{scope} for fiscal year {fiscal_year}. "
             "Use min_decisions to skip tiny offices, report the highest and lowest allowance rates "
-            "with their decision counts and the as-of date, and state that rates reflect case mix."
+            "with their decision counts and the as-of date, and state that rates are not adjusted "
+            "for case mix and are not a performance rating."
         )
 
     @mcp.prompt(name="judge_summary")

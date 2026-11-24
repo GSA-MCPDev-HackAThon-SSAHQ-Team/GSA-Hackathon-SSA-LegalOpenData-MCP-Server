@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Load the cached SSA ALJ XML files (data/raw/, listed in data/manifest.json) into SQLite.
 
-  uv run --group etl scripts/crawl_ssa_alj.py      # 1. download (resumable)
-  uv run scripts/load_ssa_alj.py       # 2. parse + load  -> data/ssa_alj.sqlite
+  uv run --group etl data/scripts/crawl_ssa_alj.py      # 1. download (resumable)
+  uv run data/scripts/load_ssa_alj.py       # 2. parse + load  -> data/ssa_alj.sqlite
 
 Behaviour
   * Schema is detected from the ROW FIELD NAMES (titles/filenames are unreliable).
@@ -24,8 +24,8 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-SCHEMA = REPO_ROOT / "db" / "schema.sql"
+REPO_ROOT = Path(__file__).resolve().parents[2]
+SCHEMA = REPO_ROOT / "data" / "db" / "schema.sql"
 MANIFEST = REPO_ROOT / "data" / "manifest.json"
 DEFAULT_DB = REPO_ROOT / "data" / "ssa_alj.sqlite"
 
@@ -414,7 +414,7 @@ def main() -> int:
     args = ap.parse_args()
 
     if not MANIFEST.exists():
-        print("No data/manifest.json - run scripts/crawl_ssa_alj.py first.", file=sys.stderr)
+        print("No data/manifest.json - run data/scripts/crawl_ssa_alj.py first.", file=sys.stderr)
         return 2
     manifest = json.loads(MANIFEST.read_text())
 

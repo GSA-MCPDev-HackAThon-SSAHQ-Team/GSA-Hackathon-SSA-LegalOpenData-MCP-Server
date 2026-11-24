@@ -9,12 +9,19 @@ from fastmcp import FastMCP
 
 from ssa_alj_mcp.models import ResponseFormat
 from ssa_alj_mcp.services import quality
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, shaped
+from ssa_alj_mcp.tools._common import (
+    DISCOVERY,
+    ResponseFormatParam,
+    annotations,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_data_quality_notes",
+        **tool_group(DISCOVERY),
         annotations=annotations("Dataset gaps, anomalies, and what is not published"),
     )
     async def ssa_alj_data_quality_notes(

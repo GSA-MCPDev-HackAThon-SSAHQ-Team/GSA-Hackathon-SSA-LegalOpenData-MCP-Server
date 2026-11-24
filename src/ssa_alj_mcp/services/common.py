@@ -45,8 +45,8 @@ def handled(fn: Callable[..., dict[str, Any]]) -> Callable[..., dict[str, Any]]:
         except DatabaseUnavailable:
             return error(
                 "The SSA ALJ database is not available on this server.",
-                "Build it with: uv run --group etl scripts/crawl_ssa_alj.py && "
-                "uv run scripts/load_ssa_alj.py (or set SSA_ALJ_DB_PATH).",
+                "Build it with: uv run --group etl data/scripts/crawl_ssa_alj.py && "
+                "uv run data/scripts/load_ssa_alj.py (or set SSA_ALJ_DB_PATH).",
             )
         except sqlite3.Error:
             return error(

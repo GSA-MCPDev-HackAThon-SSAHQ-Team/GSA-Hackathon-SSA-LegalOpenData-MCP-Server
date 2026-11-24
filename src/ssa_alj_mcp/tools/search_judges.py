@@ -11,17 +11,20 @@ from pydantic import Field
 from ssa_alj_mcp.models import FiscalYear, JudgeNameQuery, PaginationParams, ResponseFormat
 from ssa_alj_mcp.services import judges
 from ssa_alj_mcp.tools._common import (
+    LOOKUP,
     ResponseFormatParam,
     annotations,
     page_args,
     refusal_for,
     shaped,
+    tool_group,
 )
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_search_judges",
+        **tool_group(LOOKUP),
         annotations=annotations("Find the published spelling of an ALJ name"),
     )
     async def ssa_alj_search_judges(

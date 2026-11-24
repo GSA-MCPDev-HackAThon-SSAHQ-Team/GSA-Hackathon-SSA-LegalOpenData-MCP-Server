@@ -27,16 +27,18 @@ Public data. Judges are identified by published name only.
 ## Caveats
 - No judge ID: namesakes are indistinguishable. Judges who change office appear under each office.
 - Office names change over time and are merged by city name on a best-effort basis.
-- Rates reflect case mix and are not a measure of judge quality or correctness.
+- Rates are not adjusted for case mix, and they are not a measure of judge quality or correctness.
 
-## Tools
+## Tools (groups)
 
-Core (lookup): ssa_alj_list_reports, ssa_alj_search_judges, ssa_alj_get_judge_profile,
-ssa_alj_compare_offices, ssa_alj_get_office_profile, ssa_alj_office_processing_ranking.
+Each tool carries FastMCP tags / meta.category so clients can filter:
 
-Analysis: ssa_alj_national_trend, ssa_alj_monthly_pace, ssa_alj_compare_periods,
-ssa_alj_outlier_report, ssa_alj_within_office_variation, ssa_alj_judge_movements,
-ssa_alj_data_quality_notes.
+- discovery: ssa_alj_list_reports, ssa_alj_business_queries, ssa_alj_source_links,
+  ssa_alj_data_quality_notes
+- lookup: ssa_alj_search_judges, ssa_alj_get_judge_profile, ssa_alj_compare_offices,
+  ssa_alj_get_office_profile, ssa_alj_office_processing_ranking
+- analysis: ssa_alj_national_trend, ssa_alj_monthly_pace, ssa_alj_compare_periods,
+  ssa_alj_outlier_report, ssa_alj_within_office_variation, ssa_alj_judge_movements
 
 Response contract: list tools return {total,count,offset,has_more,next_offset,items,notes}.
 Snapshot tools include snapshot:{period_end,fiscal_year,report}. Optional response_format=markdown.

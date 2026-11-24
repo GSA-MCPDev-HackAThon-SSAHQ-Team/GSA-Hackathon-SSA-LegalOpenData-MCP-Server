@@ -7,6 +7,9 @@ Built for the [GSA MCP Server & SI Agent Government Hackathon](https://www.gsa.g
 (Dataset Access Server). Layout follows the
 [GSA-TTS/mcp-hackathon-template](https://github.com/GSA-TTS/mcp-hackathon-template).
 
+**Live demo:** [https://www.ssa-alj-mcpserver-gsahackathon.online/](https://www.ssa-alj-mcpserver-gsahackathon.online/)  
+MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp` · Walkthrough: [docs/demo.md](docs/demo.md)
+
 ## Problem
 
 SSA publishes ALJ disposition counts as dozens of XML snapshots on
@@ -57,19 +60,20 @@ Pass `response_format: "markdown"` for a human-readable summary.
 ```bash
 uv sync
 # data/ssa_alj.sqlite is in the repo for Docker/Render. To rebuild from SSA XML:
-# uv run --group etl scripts/crawl_ssa_alj.py && uv run scripts/load_ssa_alj.py
+# uv run --group etl data/scripts/crawl_ssa_alj.py && uv run data/scripts/load_ssa_alj.py
 
 uv run pytest -q
 uv run ssa-alj-mcp                                          # stdio
 MCP_TRANSPORT=streamable-http uv run ssa-alj-mcp            # http://127.0.0.1:8000/mcp
 ```
 
-- Protocol walkthrough: `uv run python scripts/mcp_client_demo.py`
+- Protocol walkthrough: `uv run python data/scripts/mcp_client_demo.py`
 - Inspector: `npx @modelcontextprotocol/inspector .venv/bin/ssa-alj-mcp`
 - Local clients: [docs/LOCAL_STDIO_SETUP.md](docs/LOCAL_STDIO_SETUP.md) (Goose, Claude Desktop)
 - ChatGPT (remote URL): [docs/CHATGPT_SETUP.md](docs/CHATGPT_SETUP.md)
 - Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
-- Evaluation results: [eval/RESULTS.md](eval/RESULTS.md)
+- Judging criteria map: [JUDGE_CRITERIA.md](JUDGE_CRITERIA.md)
+- Evaluation results: [eval/RESULTS.md](eval/RESULTS.md) (deterministic + mcpevals.ai / MCP Playground / [MCPJam](https://app.mcpjam.com/) with Claude · ChatGPT · Cursor); SDK: [eval/sdk/RESULTS.md](eval/sdk/RESULTS.md)
 - Docker smoke: [docs/DOCKER_SMOKE.md](docs/DOCKER_SMOKE.md)
 - Protocol eras: [docs/PROTOCOL.md](docs/PROTOCOL.md)
 
@@ -86,9 +90,9 @@ MCP_TRANSPORT=streamable-http uv run ssa-alj-mcp            # http://127.0.0.1:8
 ```
 src/ssa_alj_mcp/     FastMCP app, tools/, services/, resources/, prompts/
 tests/               pytest (synthetic DB + MCP protocol tests)
-db/schema.sql        SQLite schema + views
-scripts/             Offline ETL (crawl + load) — not part of MCP runtime
-eval/                Deterministic eval harness + RESULTS.md
+data/db/schema.sql   SQLite schema + views
+data/scripts/        Offline ETL (crawl + load) — not part of MCP runtime
+eval/                Deterministic harness + optional mcpevals SDK (`eval/sdk/`) + RESULTS.md
 docs/                architecture, client setup, Docker smoke, protocol
 Dockerfile           streamable-HTTP image (copies data/ssa_alj.sqlite when present)
 ```

@@ -1,0 +1,50 @@
+# mcpevals / mcp-agent config for the SSA ALJ MCP server.
+# Run from this directory: `uv run pytest -q`
+# Secrets: copy mcp-agent.secrets.yaml.example → mcp-agent.secrets.yaml, or export
+# ANTHROPIC_API_KEY / OPENAI_API_KEY.
+
+name: ssa_alj_mcp_eval
+description: Agent eval of SSA ALJ Open Data MCP (stdio)
+execution_engine: asyncio
+
+# Prefer Anthropic when ANTHROPIC_API_KEY is set; tests/conftest may switch to OpenAI.
+provider: anthropic
+model: claude-3-5-haiku-20241022
+
+logger:
+  transports: [console]
+  level: warning
+  progress_display: false
+
+mcp:
+  servers:
+    ssa_alj:
+      transport: stdio
+      # Spawn the main project server (FastMCP 4 / mcp 2.x) in its own uv project.
+      # This eval venv stays on mcp 1.x for mcp-agent compatibility.
+      command: uv
+      args: ["run", "--project", "../..", "ssa-alj-mcp"]
+      cwd: "."
+      env:
+        MCP_TRANSPORT: stdio
+        UV_NO_PROGRESS: "1"
+
+otel:
+  enabled: true
+  exporters: [file]
+
+anthropic:
+  default_model: claude-3-5-haiku-20241022
+
+openai:
+  default_model: gpt-4o-mini
+
+# mcp-eval reporting
+reporting:
+  formats: [json, markdown]
+  output_dir: ./test-reports
+  include_traces: true
+
+execution:
+  timeout_seconds: 180
+  max_concurrency: 2

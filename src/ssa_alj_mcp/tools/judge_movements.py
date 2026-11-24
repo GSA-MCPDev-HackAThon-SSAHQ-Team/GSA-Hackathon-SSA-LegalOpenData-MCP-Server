@@ -11,17 +11,20 @@ from pydantic import Field
 from ssa_alj_mcp.models import FiscalYear, PaginationParams, ResponseFormat
 from ssa_alj_mcp.services import workforce
 from ssa_alj_mcp.tools._common import (
+    ANALYSIS,
     ResponseFormatParam,
     annotations,
     page_args,
     refusal_for,
     shaped,
+    tool_group,
 )
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_judge_movements",
+        **tool_group(ANALYSIS),
         annotations=annotations("Judge headcount change and office-to-office moves"),
     )
     async def ssa_alj_judge_movements(

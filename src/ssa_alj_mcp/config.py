@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     mcp_port: int = 8000
 
     # -- Data ------------------------------------------------------------------
-    # SQLite file produced by scripts/load_ssa_alj.py. Opened read-only.
+    # SQLite file produced by data/scripts/load_ssa_alj.py. Opened read-only.
     ssa_alj_db_path: Path = PROJECT_ROOT / "data" / "ssa_alj.sqlite"
 
     # Hard cap for page sizes returned by list-style tools.

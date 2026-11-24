@@ -17,12 +17,20 @@ from ssa_alj_mcp.models import (
     ResponseFormat,
 )
 from ssa_alj_mcp.services import offices
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    LOOKUP,
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_compare_offices",
+        **tool_group(LOOKUP),
         annotations=annotations("Rank hearing offices by disposition rates or volume"),
     )
     async def ssa_alj_compare_offices(

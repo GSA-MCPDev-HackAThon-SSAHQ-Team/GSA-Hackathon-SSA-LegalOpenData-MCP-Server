@@ -17,17 +17,20 @@ from ssa_alj_mcp.models import (
 )
 from ssa_alj_mcp.services import analysis
 from ssa_alj_mcp.tools._common import (
+    ANALYSIS,
     ResponseFormatParam,
     annotations,
     page_args,
     refusal_for,
     shaped,
+    tool_group,
 )
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_within_office_variation",
+        **tool_group(ANALYSIS),
         annotations=annotations("Allowance-rate spread among judges inside an office"),
     )
     async def ssa_alj_within_office_variation(

@@ -10,12 +10,20 @@ from pydantic import Field
 
 from ssa_alj_mcp.models import FiscalYear, RegionCode, ResponseFormat
 from ssa_alj_mcp.services import trends
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, refusal_for, shaped
+from ssa_alj_mcp.tools._common import (
+    ANALYSIS,
+    ResponseFormatParam,
+    annotations,
+    refusal_for,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_monthly_pace",
+        **tool_group(ANALYSIS),
         annotations=annotations("Within-year pace from consecutive FYTD snapshots"),
     )
     async def ssa_alj_monthly_pace(

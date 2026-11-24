@@ -10,12 +10,20 @@ from pydantic import Field
 
 from ssa_alj_mcp.models import FiscalYear, PaginationParams, PeriodEnd, ResponseFormat
 from ssa_alj_mcp.services import discovery
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    DISCOVERY,
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_source_links",
+        **tool_group(DISCOVERY),
         annotations=annotations("SSA source HTML/XML links for a report snapshot"),
     )
     async def ssa_alj_source_links(

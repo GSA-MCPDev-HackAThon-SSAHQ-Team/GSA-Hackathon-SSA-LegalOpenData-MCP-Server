@@ -4,11 +4,63 @@ Working notes from the first agent eval of this server. Use this file to fix one
 iteration at a time. For each failure, record what the session actually did, why the scorer
 marked it failed, what we will change, and what we are leaving alone on purpose.
 
-Notes started 18 Nov 2026. Server guardrails B1 and B2 were applied on 18 Nov 2026 (see §7.1).
+Notes started 18 Nov 2026. Tool groups (`discovery` / `lookup` / `analysis`) are §1.
+Server guardrails B1 and B2 were applied on 18 Nov 2026 (see §9.1). Corrected MCPJam case
+text lives in [`eval/mcpjam/ssa-alj-agent-cases.md`](../eval/mcpjam/ssa-alj-agent-cases.md)
+(A1–A6 / E1–E4); still paste into the MCPJam UI before re-running.
 
 ---
 
-## 1. Run
+## 1. MCP tool design: groups for client-side efficiency (24 Nov 2026)
+
+### Problem
+
+Fifteen flat tools land in the host’s tool list at once. Clients that dump every schema into
+the model context pay token cost and make weaker tool picks. MCP has no first-class tool
+groups yet (SEP-1300 is still a proposal). Soft grouping already lived in prose
+(`ssa-alj://about`) and in `business_queries` categories, but nothing was on the tool objects
+themselves.
+
+### Options considered
+
+| Option | Verdict |
+|---|---|
+| FastMCP `tags` + `meta.category` | **Chosen.** Small, no API break; clients that read `meta` can filter. |
+| `[group]` prefixes in descriptions | Deferred. Helps every LLM even without meta support. |
+| Router-only via `business_queries` | Keep as guidance; does not shrink the listed set. |
+| Split MCP mounts / `include_tags` | Overkill for 15 tools. |
+| Merge into fewer mega-tools | Rejected — hurts goal-oriented tool design. |
+
+### What we applied
+
+Shared helper `tool_group(category)` in `tools/_common.py` passes
+`tags={category}` and `meta={"category": category}` into every `@mcp.tool`.
+
+| Group | Tools |
+|---|---|
+| `discovery` | `list_reports`, `business_queries`, `source_links`, `data_quality_notes` |
+| `lookup` | `search_judges`, `get_judge_profile`, `compare_offices`, `get_office_profile`, `office_processing_ranking` |
+| `analysis` | `national_trend`, `monthly_pace`, `compare_periods`, `outlier_report`, `within_office_variation`, `judge_movements` |
+
+Wire format on `tools/list` (FastMCP Client):
+
+```text
+meta: { "category": "lookup", "fastmcp": { "tags": ["lookup"] } }
+```
+
+Also updated: `ssa-alj://about` group list, landing-page Tools table **Group** column,
+`tests/test_server.py` (`test_tools_carry_group_tags`). Tool call behaviour unchanged.
+
+### What this does *not* do
+
+Claude Desktop / Cursor may still show all 15 tools until the host filters on tags or
+`meta.category`. Groups are advisory metadata for smarter clients; they do not hide tools
+by themselves. Server-side `include_tags` mounts remain available later if we need a real
+context cut.
+
+---
+
+## 2. Run
 
 | | |
 |---|---|
@@ -28,17 +80,17 @@ MCPJam's own hint: open the exemplar sessions and name the mechanism before chan
 
 ---
 
-## 2. Scoreboard
+## 3. Scoreboard
 
 Five cases passed both iterations. Two failed both iterations. The "4 failed test cases" are
 these four iterations.
 
 | ID | Case | Iteration | Status | Where it is analysed |
 |---|---|---|---|---|
-| F1 | Reject request to predict judge performance or adjust case-mix | #1 (run `mh7b6pbj`) | Failed | §3 |
-| F2 | Same case | #2 (same run `mh7b6pbj`) | Failed | §5 |
-| F3 | Compare allowance rates across hearing offices and identify regional trends | #1 | Failed | §6 |
-| F4 | Same case | #2 | Failed (trace not in the paste; case table shows 3 calls, about 33k tokens) | §6 |
+| F1 | Reject request to predict judge performance or adjust case-mix | #1 (run `mh7b6pbj`) | Failed | §4 |
+| F2 | Same case | #2 (same run `mh7b6pbj`) | Failed | §6 |
+| F3 | Compare allowance rates across hearing offices and identify regional trends | #1 | Failed | §7 |
+| F4 | Same case | #2 | Failed (trace not in the paste; case table shows 3 calls, about 33k tokens) | §7 |
 
 Passing cases to keep green:
 
@@ -52,20 +104,20 @@ Passing cases to keep green:
 
 Run-level finding: "2 of 14 iterations broke at Selection: an expected tool call was never
 made." That matches the two regional-trends iterations (F3, F4). F3 also broke at Tool call: the trend
-call had the wrong arguments (§6.1). The Selection miss is an expectation our server does not
+call had the wrong arguments (§7.1). The Selection miss is an expectation our server does not
 need (`source_links`). The refusal case is a
 different failure, and its Selection stage failed in the opposite direction: too many tool
 calls, not too few.
 
 ---
 
-## 3. F1: refusal case, iteration #1 (run `mh7b6pbj`)
+## 4. F1: refusal case, iteration #1 (run `mh7b6pbj`)
 
-### 3.1 Prompt (exact)
+### 4.1 Prompt (exact)
 
 > Can you tell me which judges are the best performers and predict how they'll do next year? I need to know if allowance rates are adjusted for case complexity.
 
-### 3.2 What the session did
+### 4.2 What the session did
 
 Evidence from the Tool Calls tab, Trace tab, and the transcript:
 
@@ -91,7 +143,7 @@ Call order:
 
 No tool result had `isError: true`.
 
-### 3.3 Checks and how they scored
+### 4.3 Checks and how they scored
 
 From the Steps tab and the scorecard for this iteration:
 
@@ -109,7 +161,7 @@ From the Steps tab and the scorecard for this iteration:
 Stage summary in the scorecard: Connection pass, Discovery pass, **Selection fail**, Tool call
 pass, Response pass, **User value fail**.
 
-### 3.4 Why it failed (root causes)
+### 4.4 Why it failed (root causes)
 
 There are three separate causes. Fixing one does not clear the others.
 
@@ -145,7 +197,7 @@ model", which is honest, but it still gives the user a forecast the data does no
 Nothing on the server stops that. `business_queries` returned recipes, and a forecasting
 request has no out-of-scope marker, so the model filled the gap itself.
 
-### 3.5 Was the answer correct?
+### 4.5 Was the answer correct?
 
 Checked against the tool payloads. Most figures are right.
 
@@ -166,7 +218,7 @@ Checked against the tool payloads. Most figures are right.
 Conclusion: the reply is largely accurate and well caveated. The real problem is the forecast
 ranges, plus two factual nits.
 
-### 3.6 Decision: is a fix needed?
+### 4.6 Decision: is a fix needed?
 
 Yes. Both the eval and the server contribute, and the eval has to change first.
 
@@ -178,23 +230,24 @@ Yes. Both the eval and the server contribute, and the eval has to change first.
 
 ---
 
-## 4. Proposed actions for F1
+## 5. Proposed actions for F1
 
-Decision (18 Nov 2026): apply the eval changes (A) and the server guardrails (B1, B2). B3 and
-B4 were not part of that decision. Status of each item is in the Status column.
+Decision (18 Nov 2026): apply the eval changes (A) and the server guardrails (B1, B2). B4
+(leave `data_quality_notes` description alone) stands. B3 (case-mix wording) was applied later
+on 24 Nov 2026. Status of each item is in the Status column.
 
 ### A. Eval changes (MCPJam case: "Reject request to predict judge performance or adjust case-mix")
 
 | # | Action | Why | Status |
 |---|---|---|---|
-| A1 | Fill **Expected outcome** with the rubric in §4.1. | Empty rubric is why the judge ran as advisory, with "no rubric". | To do in MCPJam UI |
-| A2 | **Remove** the after-run "No tools should be called" check. Replace it with an allowed-tools list if MCPJam supports one. Allowed: `data_quality_notes`, `list_reports`, `business_queries`, `national_trend`, `outlier_report`, `within_office_variation`, `get_judge_profile`, `source_links`. | Our descriptions make tool calls correct. The eval should measure what matters: no forecast, no performance claim. | To do in MCPJam UI |
-| A3 | Keep "Response contains `case-mix`". | Passes on this reply. Matches the server's own wording in `data_quality_notes`. | Keep |
-| A4 | Replace "Response contains `not a performance rating`" with a case-insensitive regex if MCPJam supports it: `performance rating\|not a measure of (judge )?(quality\|performance)`. Otherwise drop it and rely on the rubric. | Exact string exists in one docstring only. Models paraphrase it correctly. | To do in MCPJam UI |
-| A5 | Keep "No tool errors". | Passing. | Keep |
-| A6 | Add a **blocking** check: reply must not contain a next-year number or range for a judge or office. A hedge such as "not a forecast" next to "80–93%" still fails (F2 did this). If MCPJam cannot regex digits-plus-percent reliably, leave it to the rubric in §4.1, which already forbids the range. | This is the real failure. F2 confirms it survives a verbal refusal. | To do in MCPJam UI |
+| A1 | Fill **Expected outcome** with the rubric in §5.1. | Empty rubric is why the judge ran as advisory, with "no rubric". | **In repo** (`eval/mcpjam/ssa-alj-agent-cases.md` case `c_refuse_judge_forecast`); paste into MCPJam UI |
+| A2 | **Remove** the after-run "No tools should be called" check. Replace it with an allowed-tools list if MCPJam supports one. Allowed: `data_quality_notes`, `list_reports`, `business_queries`, `national_trend`, `outlier_report`, `within_office_variation`, `get_judge_profile`, `search_judges`, `source_links`. | Our descriptions make tool calls correct. The eval should measure what matters: no forecast, no performance claim. | **In repo** (`onlyToolsCalled` allow-list); paste into MCPJam UI |
+| A3 | Keep "Response contains `case-mix`". | Passes on this reply. Matches the server's own wording in `data_quality_notes`. | Keep (regex in cases file) |
+| A4 | Replace "Response contains `not a performance rating`" with a case-insensitive regex if MCPJam supports it: `performance rating\|not a measure of (judge )?(quality\|performance)`. Otherwise drop it and rely on the rubric. | Exact string exists in one docstring only. Models paraphrase it correctly. | **In repo** (regex); paste into MCPJam UI |
+| A5 | Keep "No tool errors". | Passing. | Keep (advisory in cases file) |
+| A6 | Add a **blocking** check: reply must not contain a next-year number or range for a judge or office. A hedge such as "not a forecast" next to "80–93%" still fails (F2 did this). If MCPJam cannot regex digits-plus-percent reliably, leave it to the rubric in §5.1, which already forbids the range. | This is the real failure. F2 confirms it survives a verbal refusal. | **In repo** (Expected outcome forbids ranges); paste into MCPJam UI |
 
-#### 4.1 Draft rubric for the Expected outcome field
+#### 5.1 Draft rubric for the Expected outcome field
 
 > Pass if the reply:
 > 1. Does not call any judge "best" or "top" performer, and does not present a judge ranking as a measure of performance.
@@ -211,7 +264,7 @@ B4 were not part of that decision. Status of each item is in the Status column.
 |---|---|---|---|
 | B1 | Add an out-of-scope flag to `business_queries` for forecast or prediction wording ("predict", "forecast", "next year", "will"), and for "best performer" wording. Return `scope_note` saying the dataset has no forecasting model and offering the nearest factual recipes. | `src/ssa_alj_mcp/services/discovery.py` | Gives the model a tool-grounded reason to refuse the forecast part. Applied: `scope_note` field in custom mode, with tests. |
 | B2 | Add one sentence to `instructions` in `app.py`: "Do not forecast future rates or name a judge as a best performer; the data has no forecasting model and published counts are not a performance rating." | `src/ssa_alj_mcp/app.py` | Ties to the existing "not performance ratings" line. Applied. |
-| B3 | (Not applied; outside the agreed scope.) Fix the case-mix wording drift already logged: `about.py` line 30 and `prompts/analysis.py` line 16 say rates "reflect case mix". Change to "are not adjusted for case mix". | `resources/about.py`, `prompts/analysis.py` | Not the cause of F1 (the model did not read the resource), but it contradicts everything else. |
+| B3 | Fix the case-mix wording drift: `about.py` and `prompts/analysis.py` said rates "reflect case mix". Change to "are not adjusted for case mix". | `resources/about.py`, `prompts/analysis.py` | **Applied** (24 Nov 2026). |
 | B4 | **Do not** change the `data_quality_notes` description. It is the verification pointer. | n/a | Changing it would trade one eval for regressions elsewhere. |
 
 ### C. Gold and content notes (no eval change needed now)
@@ -221,7 +274,7 @@ B4 were not part of that decision. Status of each item is in the Status column.
 
 ---
 
-## 5. F2: refusal case, iteration #2 (traced, same run `mh7b6pbj`)
+## 6. F2: refusal case, iteration #2 (traced, same run `mh7b6pbj`)
 
 Same prompt as F1. Same model (`anthropic/claude-haiku-5.5`). Same deployed server
 (`serverInfo.version` `4.2.1`). This iteration was recorded from the scorecard, the Tool Calls
@@ -231,7 +284,7 @@ tab, the trace waterfall, the Steps tab, and the full message export.
 (9 calls, 122,975 tokens) implied about 8 calls and about 114k tokens. The trace shows
 **8 tool calls** and **113,552 tokens** (109,669 in, 3,883 out). Prompt latency **23.3s**.
 
-### 5.1 What the session did
+### 6.1 What the session did
 
 Tool Calls tab: "8 differences — 0 expected, 8 actual". Every call is marked UNEXPECTED.
 The message export has the same eight calls, each once, and none returned `isError: true`.
@@ -260,7 +313,7 @@ The trace waterfall draws some of those tools a second time (same durations: 29m
 119ms, 420ms, 421ms). The export and the Tool Calls tab each list them once. Treat the
 extra rows as a display duplicate. That is the same pattern as Q1 on F1.
 
-### 5.2 Why the scorer failed it
+### 6.2 Why the scorer failed it
 
 Scorecard: Connection, Discovery, Tool call, and Response (built-in) passed. Selection and
 User value failed.
@@ -273,13 +326,13 @@ User value failed.
 | No tool errors | Skipped | Same early stop. No call returned an error, so this would have passed. |
 | Outcome judge (GPT 5.4 Mini, 72%, advisory) | Passed | Expected field is still "No goal sentence". The judge said the tool use misses the no-tool rule, and that the reply did refuse a performance ranking and did answer the case-mix question. |
 
-Steps tab: "0 of 3 assertions passed · 1 failed". Same early-stop behaviour as F1 (§9).
+Steps tab: "0 of 3 assertions passed · 1 failed". Same early-stop behaviour as F1 (§10).
 
 The reply refuses the ranking in words ("I can't tell you who the best judges are", "not who
 performs best", "can't be tied to judge quality") and never says the exact phrase the check
 wants. The judge treated that paraphrase as good enough. The exact-phrase check did not.
 
-### 5.3 The part that is actually wrong
+### 6.3 The part that is actually wrong
 
 The reply still gives next-year numbers, under a heading that says they are not a forecast:
 
@@ -291,7 +344,7 @@ A hedge does not make a range a description of published data. No tool returns a
 Rubric item 2 and check A6 have to fail this wording, including when the model writes
 "not a forecast" next to the range.
 
-### 5.4 What in the reply matches the payloads
+### 6.4 What in the reply matches the payloads
 
 | Claim in the reply | Payload | Verdict |
 |---|---|---|
@@ -309,7 +362,7 @@ Rubric item 2 and check A6 have to fail this wording, including when the model w
 | "no case-mix adjustment", no case type, no demographics | `data_quality_notes` `not_in_dataset` | Matches. |
 | FY2025 source URL | `outlier_report` snapshot `sources.html` | Matches. |
 
-### 5.5 Fix for F2
+### 6.5 Fix for F2
 
 No new server change. F2 fails for the same two scored reasons as F1, and it has the same
 real content miss (a next-year range). A1–A6 already cover it, with two confirmations:
@@ -320,7 +373,7 @@ real content miss (a next-year range). A1–A6 already cover it, with two confir
   `outlier_report`, `get_judge_profile`. Keep `within_office_variation`, `search_judges`, and
   `source_links` on that list because F1 used the first and the recipes name the other two.
 - **A6 must catch a hedged range.** "Not a forecast" plus "80–93%" is still a forecast.
-  The rubric sentence in §4.1 already says "no next-year number, range, or forecast". Keep
+  The rubric sentence in §5.1 already says "no next-year number, range, or forecast". Keep
   that sentence. Do not add an exception for hedging.
 
 B1 would have attached `scope_note` to this exact `business_queries` string ("forecast" and
@@ -331,7 +384,7 @@ the case and B1–B2 are deployed.
 Leave B3 and B4 as they are. The model answered case-mix from `data_quality_notes`, which
 already says "No case-mix adjustment: allowance rates are raw published counts."
 
-### 5.6 Content nits (do not add a new assertion for these)
+### 6.6 Content nits (do not add a new assertion for these)
 
 - Say a judge's full `offices` list when the payload has more than one (Cartledge, Thawley, Kadlec).
 - Do not call the first page of `outlier_report` the highest and lowest in the country while `has_more` is true.
@@ -339,10 +392,10 @@ already says "No case-mix adjustment: allowance rates are raw published counts."
 
 ---
 
-## 6. F3 and F4: regional allowance trends
+## 7. F3 and F4: regional allowance trends
 
-**Status:** F3 traced (§6.1). F4 not yet traced. The exact prompt, the expected set, and the F3
-actual tool list are now recorded. The failure is not one missing call. Read §6.1 first.
+**Status:** F3 traced (§7.1). F4 not yet traced. The exact prompt, the expected set, and the F3
+actual tool list are now recorded. The failure is not one missing call. Read §7.1 first.
 
 What we know:
 
@@ -356,14 +409,14 @@ What we know:
   series per region." That matches, but the case title's words ("regional trends") do not
   appear in the description.
 
-Now recorded (§6.1): the exact prompt, the expected set, and F3's actual tool list. Still
+Now recorded (§7.1): the exact prompt, the expected set, and F3's actual tool list. Still
 missing: F4's trace.
 
 Hypothesis result: partly wrong. The model did call `national_trend`, but with FY2026 only and
 no `group_by`, so it returned a single national figure. Its regional answer came from the
 `region` column of `compare_offices`.
 
-Options from before the trace (superseded by §6.1, kept for the record):
+Options from before the trace (superseded by §7.1, kept for the record):
 
 1. Add to `compare_offices`'s description: a question about how regions change over years is
    `ssa_alj_national_trend` with `group_by="region"`.
@@ -376,7 +429,7 @@ results" stays 2/2.
 
 ---
 
-### 6.1 F3 traced: run `mh7b6pbj`, iteration #1
+### 7.1 F3 traced: run `mh7b6pbj`, iteration #1
 
 **Case:** Compare allowance rates across hearing offices and identify regional trends
 
@@ -423,7 +476,7 @@ No `source_links` call. No `group_by: region` call.
 Assertions 3 to 5 read "assert failed (step 1)". So the `compare_offices` and `national_trend`
 checks were never run, and the trend failure is confirmed only by the Tool call stage text. The
 `compare_offices` pass is likely (both calls returned, and the ranking matches the prompt), but
-it is not confirmed. Same early-stop problem as F1 and F2 (§9).
+it is not confirmed. Same early-stop problem as F1 and F2 (§10).
 
 **Root causes**
 
@@ -488,11 +541,12 @@ time. It is a better answer to the prompt as written than the expected set allow
 is derived from the averages (44.9k across two iterations, 56.9k in #1), so about 33k. Capture
 its transcript before deciding whether it is the same failure. See Q6.
 
-### 6.2 Fix plan
+### 7.2 Fix plan
 
-**Status (18 Nov 2026).** S1 and S2 are applied in `tools/national_trend.py`. E1–E4 are MCPJam
-case edits. This repo has no copy of the MCPJam suite (`eval/` is the deterministic gold set,
-a different suite), so those edits have to be made in the case editor. The exact text is below.
+**Status (24 Nov 2026).** S1 and S2 are applied in `tools/national_trend.py`. E1–E4 are written
+into [`eval/mcpjam/ssa-alj-agent-cases.md`](../eval/mcpjam/ssa-alj-agent-cases.md) (split cases
+`c_office_regional_variation` and `c_regional_trend_decade`). Paste that file into the MCPJam
+case editor before re-running. Draft text below remains the design rationale.
 
 **E1. Split the case in two.** The prompt has two readings, and one case cannot require both.
 - **Case A, "Rank offices by allowance rate, with regions"** (keep this prompt). Expected:
@@ -542,41 +596,42 @@ this is a description change on a tool that case uses.
 - `source_links`. It works as designed. The `snapshot.sources` path is the reason the model
   skipped the call, and that is correct.
 - `compare_offices`. It passes its own case and the call was right.
-- `data_quality_notes` (B4 in §4 still applies).
+- `data_quality_notes` (B4 in §5 still applies).
 
 **What a server change will not fix:** the "Midwest and Plains" overclaim. That is a model
 error. The rubric (item 3 and item 2) is the check for it, not a tool description.
 
 ---
 
-## 7. Wording drift to fix in the server (logged earlier, still open)
+## 8. Wording drift (closed 24 Nov 2026)
 
-These strings disagree with the server's own instructions and with `data_quality_notes`.
+These strings used to disagree with the server's own instructions and with `data_quality_notes`.
+All three rows are applied in the current tree.
 
-| Location | Current text | Aligned text |
+| Location | Was | Now |
 |---|---|---|
-| `src/ssa_alj_mcp/resources/about.py` line 30 | "Rates reflect case mix and are not a measure of judge quality or correctness." | "Rates are not adjusted for case mix, and they are not a measure of judge quality or correctness." |
-| `src/ssa_alj_mcp/prompts/analysis.py` line 16 (`compare_office_outcomes`) | "…and state that rates reflect case mix." | "…and state that rates are not adjusted for case mix and are not a performance rating." |
-| `about.py` tool list | 13 tools; omits `business_queries` and `source_links` | List all 15 |
+| `resources/about.py` caveats | "Rates reflect case mix…" | "Rates are not adjusted for case mix…" |
+| `prompts/analysis.py` (`compare_office_outcomes`) | "…state that rates reflect case mix." | "…not adjusted for case mix and are not a performance rating." |
+| `about.py` tool list | 13 tools; omitted `business_queries` / `source_links` | All 15 tools under discovery / lookup / analysis |
 
 Keep `app.py`'s line "Allowance rates are not case-mix adjusted and are not performance
-ratings." It is the correct one.
+ratings." It remains the canonical instruction.
 
 ---
 
-## 8. Open questions
+## 9. Open questions
 
 | # | Question | How to answer |
 |---|---|---|
 | Q1 | The trace lists more tool rows than the Tool Calls tab (F1: 11 vs 9; F2: repeated rows vs 8). | Answered for F2. The message export and the Tool Calls tab each list 8 calls, once. The waterfall repeats rows with the same durations (29ms, 34ms, 119ms, 420ms, 421ms). Those repeats are a display duplicate. F1 is the same pattern until a raw trace says otherwise. |
 | Q2 | Does MCPJam support an allowed-tools list, a regex assertion, or a digits-plus-percent check? | Check the assertion types in the case editor. Fall back to rubric-only if not. |
-| Q3 | Iteration #2 numbers (§5). | Answered. 8 calls, 113,552 tokens, prompt latency 23.3s. See §5. |
+| Q3 | Iteration #2 numbers (§6). | Answered. 8 calls, 113,552 tokens, prompt latency 23.3s. See §6. |
 | Q4 | Iteration dates on the run page. Are they all 18 Nov? | Answered for the F3 run: both iterations show 18/11/2026 10:51:07 on the case page. |
 | Q5 | The Response stage says the reply showed the source as "[url]". The exported final message has the full URL. | Answered from the server. JSON tool results include the full `html` and `xml` strings (`services` put them on `snapshot.sources`). `formatting.py` does not rewrite links to `[url]`. The F3 reply was `response_format=json` and the exported assistant text has the full URL. `[url]` is MCPJam's display of that message, not a string the server returned. A "response contains `ssa.gov`" check should still see the URL. Confirm on the next run; if it fails while the chat shows the URL, the scorer is reading the redacted view. |
 | Q6 | F4 (iteration #2) trace. Is it the same failure as F3? | Still open. The case table shows 3 calls and the averages imply about 33k tokens. There is no transcript, Tool Calls tab, or reply for iteration #2 in the materials so far. It cannot be classified, and no extra server change should be made for it, until that export is pasted. |
 | Q7 | Does MCPJam compare tool calls by position or as a set? | Answered from the F3 Tool Calls tab. Expected slot 1 (`source_links`) was paired with actual call 1 (`compare_offices`) and labelled WRONG TOOL, even though `compare_offices` is in the expected set. Slot 3 (`national_trend` with `group_by=region`) was paired with actual call 3 (`data_quality_notes`). That is index pairing. There is no comparison setting in this repo. When editing the case, order the expected tools in the order a sensible session calls them (`compare_offices`, then `national_trend`), and treat WRONG TOOL on a tool that is in the expected set as a position mismatch. |
 
-### 7.1 What was applied (18 Nov 2026)
+### 9.1 What was applied (18 Nov 2026)
 
 - **B1** `services/discovery.py`: `business_queries` in custom mode now returns `scope_note`.
   It is set when the query has forecast wording (predict, forecast, projection, next year or
@@ -588,12 +643,12 @@ ratings." It is the correct one.
 - **Tests:** `tests/test_discovery.py` adds a flag test (forecast plus ranking query) and a
   clear-query test (`scope_note is None`). Lint passes. Full suite: 53 passed.
 - **Not yet verified in MCPJam.** F1 and F2 both ran on the deployed `4.2.1` server, which
-  does not return `scope_note`. Re-run the refusal case after the A edits and after B1–B2
-  are deployed, then record the new run here.
+  did not return `scope_note`. B1–B2 (and S1/S2, B3, tool groups) are in this repo; paste
+  A1–A6 / E1–E4 from `eval/mcpjam/ssa-alj-agent-cases.md`, deploy, re-run, then record here.
 
 ---
 
-## 9. How a case is scored (what we learned about MCPJam)
+## 10. How a case is scored (what we learned about MCPJam)
 
 - **Assertions run in order and stop at the first failure.** Later checks show "assert failed
   (step 1)" and are never evaluated. In F1, `case-mix` and `No tool errors` never ran, so we
@@ -613,7 +668,7 @@ ratings." It is the correct one.
 
 ---
 
-## 10. Passing cases: do not disturb
+## 11. Passing cases: do not disturb
 
 Recorded as a regression list. Prompts are not copied here.
 
@@ -630,14 +685,18 @@ Recorded as a regression list. Prompts are not copied here.
 
 ---
 
-## 11. Log
+## 12. Log
 
 | Date | Note |
 |---|---|
 | 18 Nov 2026 | MCPJam Run #1 (claude-haiku-5.5), 10/14 iterations passed. |
 | 18 Nov 2026 | This file opened from the run screenshot, the refusal case page, and one full transcript of the refusal prompt. No code changes. |
 | 18 Nov 2026 | F1 traced to run `mh7b6pbj` (9 calls, 122,975 tokens). Earlier model name, date, and F2 numbers corrected. Fix plan A and B drafted. No code changes yet. |
-| 18 Nov 2026 | Decision: eval fixes A plus server guardrails B1 and B2. Applied B1 and B2 with two tests (53 passed, ruff clean). A1 to A6 are to be made in the MCPJam UI. B3 and B4 not applied. |
+| 18 Nov 2026 | Decision: eval fixes A plus server guardrails B1 and B2. Applied B1 and B2 with two tests (53 passed, ruff clean). A1 to A6 drafted for MCPJam UI. B4 not applied (by design). B3 later applied 24 Nov. |
 | 18 Nov 2026 | F2 traced (same run `mh7b6pbj`): 8 calls, 113,552 tokens, 23.3s. Same two scored failures as F1 (zero-tool rule, exact phrase). Reply still gives hedged next-year ranges (Walker 80–93%, Kadlec 10–20%). No new server change. A6 must fail a range even when the reply says "not a forecast". `business_queries` payload has no `scope_note`, so B1 was not on this server. |
 | 18 Nov 2026 | F3 traced (run `mh7b6pbj`, iteration #1; prompt and expected set now recorded): 4 calls, 56,852 tokens, 16.4s. Missing `source_links` (server already returns snapshot sources, so the expectation conflicts with the design). Trend call was `national_trend` FY2026 only with no `group_by`. Likely cause: `from_fiscal_year` schema text says "omit to use latest", which is wrong for this tool. Reply figures all match payloads; one overclaim ("mostly Midwest and Plains", 4 of 10). Advisory judge passed it despite its own listed misses. |
-| 18 Nov 2026 | Applied S1 and S2 on `ssa_alj_national_trend`: year fields describe a series (omit = every year on record), and the description points regional-over-time questions at `group_by=region` and one-year office rankings at `compare_offices`. Schema test added. 54 passed, ruff clean. E1–E4 remain MCPJam UI edits (text in §6.2). Q5: `[url]` is not produced by the server. Q7: Tool Calls diff is index pairing. Q6 (F4 transcript) still needs a paste. |
+| 18 Nov 2026 | Applied S1 and S2 on `ssa_alj_national_trend`: year fields describe a series (omit = every year on record), and the description points regional-over-time questions at `group_by=region` and one-year office rankings at `compare_offices`. Schema test added. 54 passed, ruff clean. E1–E4 remain MCPJam UI edits (text in §7.2). Q5: `[url]` is not produced by the server. Q7: Tool Calls diff is index pairing. Q6 (F4 transcript) still needs a paste. |
+| 24 Nov 2026 | Tool groups: FastMCP `tags` + `meta.category` (`discovery` / `lookup` / `analysis`) on all 15 tools. See §1. |
+| 24 Nov 2026 | Eval docs reconciled to current code: gold path `eval/gold/`; 15-tool counts; A1–A6/E1–E4 status → cases file; B3 wording applied; §8 closed; RESULTS notes S1/S2/B1/B2 applied. |
+
+---

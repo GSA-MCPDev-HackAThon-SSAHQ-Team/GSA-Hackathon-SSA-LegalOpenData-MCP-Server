@@ -152,6 +152,10 @@ activemq-data/
 .env
 .envrc
 .venv
+# mcp-eval / mcp-agent (eval/sdk nested project)
+**/mcp-agent.secrets.yaml
+**/mcpeval.secrets.yaml
+eval/sdk/test-reports/
 env/
 venv/
 ENV/

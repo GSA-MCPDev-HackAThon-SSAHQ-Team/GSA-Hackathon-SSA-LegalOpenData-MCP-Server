@@ -20,7 +20,7 @@ curl -s http://127.0.0.1:8080/health
 curl -s http://127.0.0.1:8080/version
 # expect: "version":"0.1.0"
 
-uv run python scripts/mcp_client_demo.py --legacy --url http://127.0.0.1:8080/mcp
+uv run python data/scripts/mcp_client_demo.py --legacy --url http://127.0.0.1:8080/mcp
 # expect: tools/list -> 15 tools, tools/call results
 ```
 

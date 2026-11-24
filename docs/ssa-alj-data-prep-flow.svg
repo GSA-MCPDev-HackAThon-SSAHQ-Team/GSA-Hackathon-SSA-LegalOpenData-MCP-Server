@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">SSA ALJ data prep and maintenance flow</title>
+  <desc id="desc">Public SSA and Data.gov sources are crawled offline into raw XML, loaded into SQLite, then served read-only by the MCP server. Refresh is re-run crawl and load, never live scrape at request time.</desc>
+  <rect width="1280" height="720" fill="#ffffff"/>
+
+  <!-- Left group -->
+  <rect x="48" y="72" width="300" height="576" rx="18" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+  <rect x="108" y="52" width="180" height="32" rx="16" fill="#e5e7eb" stroke="#d1d5db" stroke-width="1"/>
+  <text x="198" y="73" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">Public sources</text>
+
+  <!-- Right group -->
+  <rect x="932" y="72" width="300" height="576" rx="18" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+  <rect x="972" y="52" width="220" height="32" rx="16" fill="#e5e7eb" stroke="#d1d5db" stroke-width="1"/>
+  <text x="1082" y="73" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#374151">Maintained in server</text>
+
+  <!-- Left boxes -->
+  <g font-family="ui-sans-serif, Helvetica, Arial, sans-serif">
+    <rect x="78" y="118" width="240" height="78" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="198" y="150" text-anchor="middle" font-size="17" font-weight="600" fill="#1e3a8a">Data.gov catalog</text>
+    <text x="198" y="174" text-anchor="middle" font-size="12" fill="#64748b">collection US-GOV-SSA-1199</text>
+
+    <rect x="78" y="232" width="240" height="78" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="198" y="264" text-anchor="middle" font-size="17" font-weight="600" fill="#1e3a8a">ssa.gov DataSets XML</text>
+    <text x="198" y="288" text-anchor="middle" font-size="12" fill="#64748b">ALJ disposition snapshots</text>
+
+    <rect x="78" y="346" width="240" height="78" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="198" y="378" text-anchor="middle" font-size="17" font-weight="600" fill="#1e3a8a">National Ranking XML</text>
+    <text x="198" y="402" text-anchor="middle" font-size="12" fill="#64748b">disps / day / ALJ reports</text>
+
+    <rect x="78" y="460" width="240" height="78" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="198" y="492" text-anchor="middle" font-size="17" font-weight="600" fill="#1e3a8a">Data dictionary</text>
+    <text x="198" y="516" text-anchor="middle" font-size="12" fill="#64748b">data_dictionary.html</text>
+  </g>
+
+  <!-- Center: artifacts card + ETL box -->
+  <g font-family="ui-sans-serif, Helvetica, Arial, sans-serif">
+    <rect x="448" y="168" width="384" height="88" rx="12" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+    <text x="640" y="192" text-anchor="middle" font-size="11" font-weight="600" fill="#6d28d9" letter-spacing="0.04em">OFFLINE ARTIFACTS</text>
+    <text x="640" y="214" text-anchor="middle" font-size="11" fill="#4c1d95">
+      <tspan font-weight="600">Raw</tspan>
+      <tspan fill="#6b7280">  data/raw/ · data/manifest.json</tspan>
+    </text>
+    <text x="640" y="234" text-anchor="middle" font-size="11" fill="#4c1d95">
+      <tspan font-weight="600">DB</tspan>
+      <tspan fill="#6b7280">  data/db/schema.sql · data/ssa_alj.sqlite</tspan>
+    </text>
+  </g>
+
+  <rect x="470" y="276" width="340" height="200" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="640" y="314" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#4c1d95">Offline ETL (prep)</text>
+  <text x="640" y="342" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#6b7280">not part of MCP request path</text>
+  <text x="640" y="372" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#4c1d95">1. data/scripts/crawl_ssa_alj.py</text>
+  <text x="640" y="394" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">Data.gov → raw XML + SHA-256</text>
+  <text x="640" y="422" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#4c1d95">2. data/scripts/load_ssa_alj.py</text>
+  <text x="640" y="444" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">data/db/schema.sql → SQLite + load_issue</text>
+
+  <!-- Right boxes -->
+  <g font-family="ui-sans-serif, Helvetica, Arial, sans-serif">
+    <rect x="962" y="118" width="240" height="78" rx="12" fill="#ffffff" stroke="#ef4444" stroke-width="2"/>
+    <text x="1082" y="148" text-anchor="middle" font-size="17" font-weight="600" fill="#991b1b">ssa_alj.sqlite</text>
+    <text x="1082" y="172" text-anchor="middle" font-size="12" fill="#64748b">shipped · tracked in git</text>
+
+    <rect x="962" y="232" width="240" height="78" rx="12" fill="#ffffff" stroke="#ef4444" stroke-width="2"/>
+    <text x="1082" y="262" text-anchor="middle" font-size="17" font-weight="600" fill="#991b1b">db.py read-only</text>
+    <text x="1082" y="286" text-anchor="middle" font-size="12" fill="#64748b">mode=ro · query_only</text>
+
+    <rect x="962" y="346" width="240" height="78" rx="12" fill="#ffffff" stroke="#ef4444" stroke-width="2"/>
+    <text x="1082" y="376" text-anchor="middle" font-size="17" font-weight="600" fill="#991b1b">MCP tools / services</text>
+    <text x="1082" y="400" text-anchor="middle" font-size="12" fill="#64748b">parameterised SQL only</text>
+
+    <rect x="962" y="460" width="240" height="78" rx="12" fill="#ffffff" stroke="#ef4444" stroke-width="2"/>
+    <text x="1082" y="490" text-anchor="middle" font-size="17" font-weight="600" fill="#991b1b">Refresh path</text>
+    <text x="1082" y="514" text-anchor="middle" font-size="12" fill="#64748b">re-crawl → reload · no live scrape</text>
+  </g>
+
+  <!-- Left connectors -->
+  <g fill="none" stroke="#3b82f6" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M318 157 H420 V320 H470" marker-end="url(#arrowBlue)"/>
+    <path d="M318 271 H400 V340 H470" marker-end="url(#arrowBlue)"/>
+    <path d="M318 385 H400 V380 H470" marker-end="url(#arrowBlue)"/>
+    <path d="M318 499 H420 V420 H470" marker-end="url(#arrowBlue)"/>
+  </g>
+  <g font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="11" fill="#2563eb">
+    <text x="328" y="148">HTTPS / JSON</text>
+    <text x="328" y="262">HTTPS / XML</text>
+    <text x="328" y="376">HTTPS / XML</text>
+    <text x="328" y="490">HTTPS / HTML</text>
+  </g>
+
+  <!-- Right connectors -->
+  <g fill="none" stroke="#7c3aed" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M810 340 H860 V157 H962" marker-end="url(#arrowPurple)"/>
+    <path d="M810 360 H880 V271 H962" marker-end="url(#arrowPurple)"/>
+    <path d="M810 390 H880 V385 H962" marker-end="url(#arrowPurple)"/>
+    <path d="M810 420 H860 V499 H962" marker-end="url(#arrowPurple)"/>
+  </g>
+  <g font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="11" fill="#6d28d9">
+    <text x="820" y="148">ship / deploy</text>
+    <text x="820" y="262">open SQLite</text>
+    <text x="820" y="376">tools/call</text>
+    <text x="820" y="490">ops only</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="640" y="680" text-anchor="middle" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">
+    Runtime never downloads from SSA. Docker/Render ship data/ssa_alj.sqlite only.
+  </text>
+
+  <defs>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+</svg>

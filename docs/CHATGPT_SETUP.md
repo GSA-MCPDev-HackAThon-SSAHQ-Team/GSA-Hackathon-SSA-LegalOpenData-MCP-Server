@@ -29,7 +29,7 @@ whose labels change; follow the intent if a label differs.
 cd GSA-Hackathon-SSA-LegalOpenData-MCP-Server
 uv sync
 ls -lh data/ssa_alj.sqlite        # ~40 MB; if missing, see "Rebuild the database" at the end
-uv run pytest -q                  # 32 tests should pass
+uv run pytest -q                  # unit + MCP protocol tests should pass
 ```
 
 ## 2. Start the server in HTTP mode
@@ -45,7 +45,7 @@ It listens on `http://127.0.0.1:8000`. Leave this terminal open. To use another 
 
 ```bash
 curl http://127.0.0.1:8000/health          # {"status":"healthy","service":"ssa-alj-mcp"}
-uv run python scripts/mcp_client_demo.py --url http://127.0.0.1:8000/mcp
+uv run python data/scripts/mcp_client_demo.py --url http://127.0.0.1:8000/mcp
 ```
 
 The demo should print `tools/list -> 15 tools`, a `tools/call` result and the resource and prompt
@@ -89,7 +89,7 @@ Test it from outside:
 
 ```bash
 curl https://<your-tunnel-host>/health
-uv run python scripts/mcp_client_demo.py --url https://<your-tunnel-host>/mcp
+uv run python data/scripts/mcp_client_demo.py --url https://<your-tunnel-host>/mcp
 ```
 
 Notes:
@@ -187,6 +187,6 @@ connectors can send an API key or OAuth). Tell me and I will add a `MCP_AUTH_TOK
 ## Rebuild the database (only if `data/ssa_alj.sqlite` is missing)
 
 ```bash
-uv run --group etl scripts/crawl_ssa_alj.py    # ~7 min, resumable; downloads the 198 SSA XML files
-uv run scripts/load_ssa_alj.py                 # ~10 s; writes data/ssa_alj.sqlite
+uv run --group etl data/scripts/crawl_ssa_alj.py    # ~7 min, resumable; downloads the 198 SSA XML files
+uv run data/scripts/load_ssa_alj.py                 # ~10 s; writes data/ssa_alj.sqlite
 ```

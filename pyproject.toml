@@ -28,11 +28,13 @@ dev = [
     "ruff>=0.6.0",
 ]
 # Data pipeline only (crawl SSA + load SQLite). Not needed to run the server.
-#   uv run --group etl scripts/crawl_ssa_alj.py
+#   uv run --group etl data/scripts/crawl_ssa_alj.py
 etl = [
     # www.ssa.gov's CDN answers 403 to plain curl/requests/httpx; curl_cffi impersonates Chrome's TLS.
     "curl_cffi>=0.7",
 ]
+# Agent eval SDK (mcpevals) lives in eval/sdk/ as its own uv project — it needs mcp<2,
+# while this server runs on FastMCP 4 / mcp 2.x. See eval/sdk/README.md.
 [tool.ruff]
 line-length = 100
 target-version = "py311"

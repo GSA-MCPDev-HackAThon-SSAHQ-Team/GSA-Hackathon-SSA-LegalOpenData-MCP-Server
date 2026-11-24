@@ -9,12 +9,20 @@ from fastmcp import FastMCP
 
 from ssa_alj_mcp.models import FiscalYear, JudgeNameQuery, ResponseFormat
 from ssa_alj_mcp.services import judges
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, refusal_for, shaped
+from ssa_alj_mcp.tools._common import (
+    LOOKUP,
+    ResponseFormatParam,
+    annotations,
+    refusal_for,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_get_judge_profile",
+        **tool_group(LOOKUP),
         annotations=annotations("Year-by-year disposition profile for one ALJ"),
     )
     async def ssa_alj_get_judge_profile(

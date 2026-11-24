@@ -13,7 +13,7 @@ Politeness / resilience (www.ssa.gov sits behind a bot-protecting CDN that block
   * exponential back-off on 403/429/5xx, abort the run after repeated failures
   * resumable: files already downloaded (per manifest) are skipped unless --force
 
-Usage:  uv run --group etl scripts/crawl_ssa_alj.py [--force] [--limit N] [--delay 2.0]
+Usage:  uv run --group etl data/scripts/crawl_ssa_alj.py [--force] [--limit N] [--delay 2.0]
 """
 
 from __future__ import annotations
@@ -29,7 +29,7 @@ from pathlib import Path
 
 from curl_cffi import requests
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 RAW_DIR = REPO_ROOT / "data" / "raw"
 MANIFEST = REPO_ROOT / "data" / "manifest.json"
 

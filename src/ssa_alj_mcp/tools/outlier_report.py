@@ -17,12 +17,20 @@ from ssa_alj_mcp.models import (
     ResponseFormat,
 )
 from ssa_alj_mcp.services import analysis
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    ANALYSIS,
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_outlier_report",
+        **tool_group(ANALYSIS),
         annotations=annotations("Peer z-score outliers for offices or judges"),
     )
     async def ssa_alj_outlier_report(

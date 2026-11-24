@@ -4,6 +4,23 @@ This server is a thin, read-only MCP layer over public SSA hearing-office ALJ di
 data (fiscal years 2010–2026). Clients ask questions; the server answers from a local SQLite
 file. It never scrapes SSA at request time and never invents FYTD semantics in the model’s head.
 
+![SSA ALJ MCP Server architecture](ssa-alj-mcp-architecture.svg)
+
+MCP hosts such as Claude Desktop and Cursor load an MCP client (Connectors / remote `/mcp`).
+That client speaks MCP/JSON-RPC 2.0 to this FastMCP server over Streamable HTTP or local
+stdio. The server routes `tools/call` and `resources/read` through services into a
+read-only SQLite dispositions file (FY2010–2026). A raster copy is at
+[`ssa-alj-mcp-architecture.jpg`](ssa-alj-mcp-architecture.jpg).
+
+![SSA ALJ data prep and maintenance](ssa-alj-data-prep-flow.svg)
+
+Data is prepared **offline** from the
+[Data.gov ALJ Disposition Data collection](https://catalog.data.gov/?q=ALJ+Disposition+Data&sort=last_harvested_date&collection=US-GOV-SSA-1199&results=400)
+(`US-GOV-SSA-1199`): catalog → `crawl_ssa_alj.py` → `data/raw/` →
+`load_ssa_alj.py` + `data/db/schema.sql` → `data/ssa_alj.sqlite`. The running MCP process only
+opens that SQLite file read-only; refresh means re-run crawl then load (no live scrape).
+Raster copy: [`ssa-alj-data-prep-flow.jpg`](ssa-alj-data-prep-flow.jpg).
+
 ---
 
 ## What sits where
@@ -131,7 +148,7 @@ One call, end to end:
 
 ## Data model
 
-Built from `db/schema.sql`. Judges are matched by published name only (`name_key` folds case and
+Built from `data/db/schema.sql`. Judges are matched by published name only (`name_key` folds case and
 punctuation). Offices fold to a city-level base so `MIAMI` and `MIAMI OHO` can share a history.
 
 ```
@@ -167,12 +184,12 @@ The semantics that matter most:
 ```
  src/ssa_alj_mcp/     FastMCP app, tools, services, resources, prompts
  tests/               pytest against a synthetic SQLite DB
- db/schema.sql        schema + views
+ data/db/schema.sql   schema + views
  data/ssa_alj.sqlite  what the server reads (shipped for Docker/Render)
- data/raw/            crawled SSA XML mirror
+ data/raw/            crawled SSA XML mirror (from Data.gov US-GOV-SSA-1199)
  eval/                deterministic harness + gold questions + RESULTS.md
  docs/                this file, client setup, Docker smoke, protocol
- scripts/             crawl + load ETL, mcp_client_demo
+ data/scripts/        crawl + load ETL, mcp_client_demo
  Dockerfile           HTTP image
 ```
 
@@ -222,7 +239,8 @@ What we did, in order:
     Sync services + SQL views   ← FY-final, rates, office folding
          │
          ▼
-    SQLite built offline        ← Data.gov / ssa.gov → crawl → load
+    SQLite built offline        ← Data.gov catalog US-GOV-SSA-1199 → crawl → load
+                                  https://catalog.data.gov/?q=ALJ+Disposition+Data&sort=last_harvested_date&collection=US-GOV-SSA-1199&results=400
 ```
 
 ---
@@ -261,7 +279,8 @@ keeps anomalies in `load_issue`, and the crawler is resumable with SHA-256 check
 silently drop awkward rows.
 
 **Tool choice.** Too few mega-tools hide intent; too many micro-tools drown the model. We landed
-on thirteen goal tools, with `list_reports` / `data_quality_notes` as the orientation pair, plus
+on fifteen goal tools (tagged `discovery` / `lookup` / `analysis`), with
+`list_reports` / `business_queries` / `data_quality_notes` as the orientation set, plus
 cross-links in docstrings and structured `error` + `hint` payloads.
 
 **Local vs remote.** ChatGPT cannot talk stdio to your laptop. One `app.main` path: stdio by

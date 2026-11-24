@@ -10,12 +10,13 @@ from pydantic import Field
 
 from ssa_alj_mcp.models import FiscalYear, RegionCode, ResponseFormat, TrendGroupBy
 from ssa_alj_mcp.services import trends
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, shaped
+from ssa_alj_mcp.tools._common import ANALYSIS, ResponseFormatParam, annotations, shaped, tool_group
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_national_trend",
+        **tool_group(ANALYSIS),
         annotations=annotations("Multi-year national or regional disposition series"),
     )
     async def ssa_alj_national_trend(

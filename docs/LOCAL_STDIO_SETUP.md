@@ -12,7 +12,7 @@ ChatGPT cannot do this (it only calls remote URLs). See [CHATGPT_SETUP.md](CHATG
 cd /Users/apple/Documents/myOpenSource/GSA_MCP_HackAThon/GSA-Hackathon-SSA-LegalOpenData-MCP-Server_Repo/GSA-Hackathon-SSA-LegalOpenData-MCP-Server
 uv sync
 ls -lh data/ssa_alj.sqlite      # ~40 MB must exist
-uv run pytest -q                # optional: 32 tests pass
+uv run pytest -q                # optional: unit + MCP protocol tests
 ```
 
 Pick **one** of these two launch commands and use it in both clients below. Both were tested here and
@@ -42,7 +42,7 @@ Ways to check the server works **without** a chat client:
 
 ```bash
 # 1. Call every core method through a stdio client (spawns the server itself, prints results)
-uv run python scripts/mcp_client_demo.py
+uv run python data/scripts/mcp_client_demo.py
 
 # 2. Or interactively in a browser UI (Node/npx required)
 cd /Users/apple/Documents/myOpenSource/GSA_MCP_HackAThon/GSA-Hackathon-SSA-LegalOpenData-MCP-Server_Repo/GSA-Hackathon-SSA-LegalOpenData-MCP-Server

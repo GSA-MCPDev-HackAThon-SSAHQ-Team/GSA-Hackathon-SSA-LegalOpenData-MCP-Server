@@ -24,7 +24,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 # Install dependencies first for better layer caching.
 COPY pyproject.toml README.md ./
 COPY src ./src
-# The read-only SQLite database built by scripts/load_ssa_alj.py (git-ignored; see README).
+# The read-only SQLite database built by data/scripts/load_ssa_alj.py (see README).
 COPY data/ssa_alj.sqlite ./data/ssa_alj.sqlite
 RUN uv pip install --system --no-cache .
 

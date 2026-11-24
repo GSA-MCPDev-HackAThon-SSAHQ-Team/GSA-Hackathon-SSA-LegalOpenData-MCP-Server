@@ -27,7 +27,7 @@ If it hangs or fails once, wait ~30–60 seconds and run the same command again.
 Optional deeper check from this repo:
 
 ```bash
-uv run python scripts/mcp_client_demo.py --url https://gsa-hackathon-ssa-legalopendata-mcp.onrender.com/mcp
+uv run python data/scripts/mcp_client_demo.py --url https://gsa-hackathon-ssa-legalopendata-mcp.onrender.com/mcp
 ```
 
 ### Step 2 — Open ChatGPT connector settings
@@ -56,7 +56,7 @@ uv run python scripts/mcp_client_demo.py --url https://gsa-hackathon-ssa-legalop
    | **Authentication** | **None** |
 
 3. Click **Save** / **Create**.
-4. Confirm ChatGPT shows about **13** tools whose names start with `ssa_alj_`.
+4. Confirm ChatGPT shows about **15** tools whose names start with `ssa_alj_`.
 
 ### Step 5 — Install the plugin and use it in a chat
 

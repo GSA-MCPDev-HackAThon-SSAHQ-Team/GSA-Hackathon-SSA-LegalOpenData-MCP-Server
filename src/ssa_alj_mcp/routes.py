@@ -33,6 +33,21 @@ def public_mcp_url(request: Request) -> str:
     return f"{public_origin(request)}/mcp"
 
 
+def _tool_category(tool: object) -> str:
+    meta = getattr(tool, "meta", None) or {}
+    if isinstance(meta, dict):
+        category = meta.get("category")
+        if isinstance(category, str) and category:
+            return category
+        tags = meta.get("fastmcp", {}).get("tags") if isinstance(meta.get("fastmcp"), dict) else None
+        if isinstance(tags, (list, set, tuple)) and tags:
+            return str(next(iter(tags)))
+    tags = getattr(tool, "tags", None)
+    if isinstance(tags, (set, list, tuple)) and tags:
+        return str(sorted(tags)[0])
+    return ""
+
+
 def _tool_rows(tools: list) -> str:
     rows: list[str] = []
     for tool in tools:
@@ -44,7 +59,11 @@ def _tool_rows(tools: list) -> str:
             title = (getattr(tool, "description", None) or "").strip().split("\n", 1)[0]
         name = escape(tool.name, quote=True)
         desc = escape(title, quote=True)
-        rows.append(f"<tr><td class=\"name\"><code>{name}</code></td><td>{desc}</td></tr>")
+        group = escape(_tool_category(tool), quote=True)
+        rows.append(
+            f"<tr><td class=\"name\"><code>{name}</code></td>"
+            f"<td>{group}</td><td>{desc}</td></tr>"
+        )
     return "\n".join(rows)
 
 
@@ -318,7 +337,7 @@ def _home_page(mcp_url: str, health_url: str, tools: list) -> str:
     </div>
     <h2>Tools</h2>
     <table>
-      <thead><tr><th>Tool</th><th>Description</th></tr></thead>
+      <thead><tr><th>Tool</th><th>Group</th><th>Description</th></tr></thead>
       <tbody>
         {_tool_rows(tools)}
       </tbody>

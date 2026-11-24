@@ -57,7 +57,7 @@ Do **not** put the Render URL in `claude_desktop_config.json` for remote MCP. Th
 5. Start a **new chat**. Enable the connector for that chat if Claude asks, and **approve**
    tool use when prompted.
 
-You should see **13** tools named `ssa_alj_*`.
+You should see **15** tools named `ssa_alj_*`.
 
 The same URL works from **claude.ai** (web) under Connectors if your account allows custom
 remote MCP — steps mirror the Desktop UI.

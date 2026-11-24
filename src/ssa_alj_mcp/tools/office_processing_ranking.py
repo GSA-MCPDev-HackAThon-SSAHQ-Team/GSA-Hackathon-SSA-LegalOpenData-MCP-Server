@@ -9,12 +9,20 @@ from fastmcp import FastMCP
 
 from ssa_alj_mcp.models import PaginationParams, PeriodEnd, RegionCode, ResponseFormat
 from ssa_alj_mcp.services import offices
-from ssa_alj_mcp.tools._common import ResponseFormatParam, annotations, page_args, shaped
+from ssa_alj_mcp.tools._common import (
+    LOOKUP,
+    ResponseFormatParam,
+    annotations,
+    page_args,
+    shaped,
+    tool_group,
+)
 
 
 def register(mcp: FastMCP) -> None:
     @mcp.tool(
         name="ssa_alj_office_processing_ranking",
+        **tool_group(LOOKUP),
         annotations=annotations("SSA National Ranking by dispositions per day per ALJ"),
     )
     async def ssa_alj_office_processing_ranking(
