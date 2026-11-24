@@ -5,9 +5,10 @@ Administrative Law Judge disposition data (fiscal years 2010–2026).
 
 Built for the [GSA MCP Server & SI Agent Government Hackathon](https://www.gsa.gov/super-intelligence/si-community-of-practice/events-and-training/mcp-server-and-si-agent-government-hackathon).
 
+**Demo walkthrough (Claude Desktop + screenshots):** [docs/demo/demo.md](docs/demo/demo.md)
+
 **Live demo:** [https://www.ssa-alj-mcpserver-gsahackathon.online/](https://www.ssa-alj-mcpserver-gsahackathon.online/)  
 MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp`  
-**Demo walkthrough (Claude Desktop + screenshots):** [docs/demo/demo.md](docs/demo/demo.md)  
 **Presentation deck:** [docs/demo/SSA-ALJ-MCP-Hackathon-Deck.pptx](docs/demo/SSA-ALJ-MCP-Hackathon-Deck.pptx)  
 **Evaluation document:** [docs/demo/SSA-ALJ-MCP-Evaluation-Document.docx](docs/demo/SSA-ALJ-MCP-Evaluation-Document.docx)  
 **Architecture:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
