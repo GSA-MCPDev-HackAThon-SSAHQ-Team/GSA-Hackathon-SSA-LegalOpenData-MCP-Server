@@ -6,6 +6,12 @@ This server is a thin, read-only MCP layer over public SSA hearing-office ALJ di
 data (fiscal years 2010–2026). Clients ask questions; the server answers from a local SQLite
 file. It never scrapes SSA at request time and never invents FYTD semantics in the model’s head.
 
+![MCP host, client, and server roles](ssa-alj-mcp-roles.svg)
+
+Three MCP building blocks: the **host** (Claude Desktop, Cursor, ChatGPT, …) embeds an
+**MCP client** that speaks MCP/JSON-RPC 2.0 to this **MCP server**. Raster copy:
+[`ssa-alj-mcp-roles.jpg`](ssa-alj-mcp-roles.jpg).
+
 ![SSA ALJ MCP Server architecture](ssa-alj-mcp-architecture.svg)
 
 MCP hosts such as Claude Desktop and Cursor load an MCP client (Connectors / remote `/mcp`).

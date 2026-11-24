@@ -25,7 +25,11 @@ MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp`
 
 ## Diagrams
 
-MCP hosts → FastMCP server → read-only SQLite (same diagrams as [ARCHITECTURE.md](../docs/ARCHITECTURE.md)):
+Same diagrams as [ARCHITECTURE.md](../docs/ARCHITECTURE.md). MCP Host → Client → Server roles:
+
+![MCP host, client, and server roles](../docs/ssa-alj-mcp-roles.jpg)
+
+MCP hosts → FastMCP server → read-only SQLite:
 
 ![SSA ALJ MCP Server architecture](../docs/ssa-alj-mcp-architecture.jpg)
 

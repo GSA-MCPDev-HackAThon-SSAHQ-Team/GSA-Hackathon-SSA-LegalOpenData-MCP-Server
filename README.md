@@ -35,6 +35,10 @@ XML layout or FYTD semantics.
 
 ## Diagrams
 
+MCP Host embeds MCP Client; Client speaks MCP to this MCP Server:
+
+![MCP host, client, and server roles](docs/ssa-alj-mcp-roles.jpg)
+
 MCP hosts → FastMCP server → read-only SQLite:
 
 ![SSA ALJ MCP Server architecture](docs/ssa-alj-mcp-architecture.jpg)

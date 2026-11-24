@@ -8,6 +8,7 @@ Project documentation for the SSA ALJ Open Data MCP server.
 | [demo/SSA-ALJ-MCP-Hackathon-Deck.pptx](demo/SSA-ALJ-MCP-Hackathon-Deck.pptx) | Hackathon presentation deck (sample template filled for SSA ALJ) |
 | [demo/SSA-ALJ-MCP-Evaluation-Document.docx](demo/SSA-ALJ-MCP-Evaluation-Document.docx) | Evaluation documentation deliverable (methodology → lessons) |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Package layout, tools, data model, transports |
+| [ssa-alj-mcp-roles.svg](ssa-alj-mcp-roles.svg) | MCP Host · Client · Server building blocks |
 | [ssa-alj-mcp-architecture.svg](ssa-alj-mcp-architecture.svg) | MCP hosts ↔ server ↔ SQLite |
 | [ssa-alj-data-prep-flow.svg](ssa-alj-data-prep-flow.svg) | Offline crawl/load → how SQLite is maintained |
 | [EVALUATION.md](EVALUATION.md) | Criterion 2 — what each eval is |
