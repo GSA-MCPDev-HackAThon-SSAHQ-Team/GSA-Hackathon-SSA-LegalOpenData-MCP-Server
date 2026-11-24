@@ -23,6 +23,20 @@ MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp`
 
 **Project docs:** [Architecture](../docs/ARCHITECTURE.md) · [Demo walkthrough](../docs/demo/demo.md)
 
+## Diagrams
+
+MCP hosts → FastMCP server → read-only SQLite (same diagrams as [ARCHITECTURE.md](../docs/ARCHITECTURE.md)):
+
+![SSA ALJ MCP Server architecture](../docs/ssa-alj-mcp-architecture.svg)
+
+Raster: [`ssa-alj-mcp-architecture.jpg`](../docs/ssa-alj-mcp-architecture.jpg).
+
+Offline crawl/load builds `ssa_alj.sqlite`; the MCP server only reads it:
+
+![SSA ALJ data prep and maintenance](../docs/ssa-alj-data-prep-flow.svg)
+
+Raster: [`ssa-alj-data-prep-flow.jpg`](../docs/ssa-alj-data-prep-flow.jpg).
+
 ## Layout
 
 | Path | Role |
@@ -36,13 +50,6 @@ MCP endpoint: `https://www.ssa-alj-mcpserver-gsahackathon.online/mcp`
 | [`scripts/`](scripts/) | Offline ETL + MCP client demo (`crawl_ssa_alj.py`, `load_ssa_alj.py`, `mcp_client_demo.py`) |
 
 Schema and views for the database live in [`db/schema.sql`](db/schema.sql).
-
-## Data prep & maintenance diagram
-
-![SSA ALJ data prep and maintenance](../docs/ssa-alj-data-prep-flow.svg)
-
-Offline crawl/load builds `ssa_alj.sqlite`; the MCP server only reads it. Raster:
-[`ssa-alj-data-prep-flow.jpg`](../docs/ssa-alj-data-prep-flow.jpg).
 
 ## How the data is obtained
 
